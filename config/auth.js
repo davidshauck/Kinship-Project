@@ -7,11 +7,11 @@ module.exports = {
     return new Promise((resolve, reject) => {
       db.Listing.findOne({
         email: email
-      }).then(student => {
-        student.verifyPassword(password, (err, isMatch) => {
+      }).then(listing => {
+        listing.verifyPassword(password, (err, isMatch) => {
           if (isMatch && !err) {
-            let token = jwt.sign({ id: student._id, email: student.email }, process.env.SERVER_SECRET, { expiresIn: 129600 }); // Sigining the token
-            resolve({ success: true, message: "Token Issued!", token: token, student: student });
+            let token = jwt.sign({ id: listing._id, email: listing.email }, process.env.SERVER_SECRET, { expiresIn: 600 }); // 129600 Sigining the token
+            resolve({ success: true, message: "Token Issued!", token: token, listing: listing });
           } else {
             reject({ success: false, message: "Authentication failed. Wrong password." });
           }

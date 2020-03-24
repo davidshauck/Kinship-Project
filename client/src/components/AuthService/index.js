@@ -32,7 +32,7 @@ export default class AuthService {
     try {
       const decoded = decode(token);
       console.log("DECODED1", decoded)
-      if (decoded.exp < Date.now() / 2) {
+      if (decoded.exp < Date.now() / 1000 ) {
         return true;
       } else return false;
     } catch (err) {
