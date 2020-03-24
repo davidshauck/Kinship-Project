@@ -1,0 +1,64 @@
+.image {
+    width: 100px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0px !important;
+}
+
+.tutor-name {
+    font-size: 22px;
+    Font-family: "Mark","Avenir","Helvetica","Arial",sans-serif;
+    font-weight: bold;
+}
+
+.expertise {
+    font-size: 14px;
+}
+
+.img-thumbnail {
+    padding: 0px !important;
+    max-width: 110px;
+    text-align: left;
+    border: none !important;
+}
+
+.text {
+    display: inline-block;
+    font-size: 12px;
+}
+
+.results-box {
+    margin-top: 0px;
+    /* float: right: */
+}
+
+p {
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.list-group-item {
+    padding: 10px 0px 10px 0px !important;
+}
+
+.list-group {
+    padding: 0px;
+}
+
+.stars-container {
+    width: 150px;
+    margin: 10px 0 20px 0;
+}
+
+.rating {
+    display: inline-block;
+    font-size: 14px;
+    margin-left: 10px;
+    vertical-align: center;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 16px;
+}
+

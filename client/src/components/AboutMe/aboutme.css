@@ -1,0 +1,37 @@
+.jumbotron { 
+    clear: both;
+    padding: 25px 25px 0px 25px !important;
+    margin: 5% 20% 0 20%;
+    text-align: center;
+    background-color: orange !important;
+    color: white;
+    /* border: 20px solid white; */
+  }
+
+h2 {
+    font-size: 30px !important;
+    font-family:"Mark","Avenir","Helvetica","Arial",sans-serif;
+    margin-bottom: 0px;
+    text-align: left;
+  }
+
+.subhead {
+    font-family:"Mark","Avenir","Helvetica","Arial",sans-serif;
+    font-size: 16px;
+    margin-bottom: 30px;
+    text-align: left;
+    line-height: 24px;
+    display: inline-block;
+}
+
+.nav-item {
+  color: white;
+}
+
+.headshot {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+    border-radius: 6px;
+}
