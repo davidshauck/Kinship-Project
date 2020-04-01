@@ -4,7 +4,6 @@ import API from "./utils/API";
 import AuthService from "./components/AuthService";
 import {withRouter} from "react-router-dom";
 
-
 // Set Up The Initial Context
 const SearchContext = React.createContext()
 // Create an exportable consumer that can be injected into components
@@ -18,8 +17,7 @@ class SearchProvider extends Component {
   }
 
     state = {
-        // userName: "",
-        // loggedInUser: this.Auth.getProfile(),
+        userName: "",
         search: "",
         categories: ["Dining", "Essentials", "Take-Out", "Delivery", "Retail", "Services"],
         listings: [],
@@ -35,17 +33,15 @@ class SearchProvider extends Component {
         // history.push("/students");
         console.log("SEARCH", this.state.search)
         API.getListings(this.state.search)
-            .then(res => {
-              if (res.data.status === "error") {
-                throw new Error(res.data.message);
-              }
-              console.log("RESDATA", res.data)
+          .then(res => {
+            if (res.data.status === "error") {
+              throw new Error(res.data.message);
+            }
+            console.log("RESDATA", res.data)
             this.setState({ ...this.state, listings: res.data, error: false, search: "" }, () =>{
               this.props.history.push("/listings")
             });
-      
-            })
-            // .then(() => console.log("HELLO", this.state))
+          })
 
             .catch(err => this.setState({ ...this.state, error: err.message }));
         }, 
@@ -57,17 +53,6 @@ class SearchProvider extends Component {
             })
             .catch(err => console.log(err));
         },
-        // getUserInfo: (user) => {
-        //   API.getStudent(user)
-        //   .then(res => this.setState({  
-        //     userName: res.data.first, 
-            
-        //   })).then(console.log("USERNAME ", this.state.userName))
-        //   .catch(err => console.log(err));
-        //   // console.log("USERENAME", loggedInUserName[0])
-        //   // return loggedInUserName;
-        //   // console.log("LOGGED IN USER***", this.state.loggedInUser.id)
-        // },
         handleLogin: event => {
           event.preventDefault();
       
@@ -86,18 +71,14 @@ class SearchProvider extends Component {
 
       componentDidMount() {
         API.getListings(this.state.search)
-            .then(res => {
-              if (res.data.status === "error") {
-                throw new Error(res.data.message);
-              }
-              console.log("RESDATA", res.data)
-            this.setState({ ...this.state, listings: res.data, error: false });
-      
+          .then(res => {
+            if (res.data.status === "error") {
+              throw new Error(res.data.message);
+            }
+            console.log("RESDATA", res.data)
+            this.setState({ ...this.state, listings: res.data, error: false });      
             })
-            // .then(() => console.log("HELLO", this.state))
-
-            .catch(err => this.setState({ ...this.state, error: err.message }));
-
+          .catch(err => this.setState({ ...this.state, error: err.message }));
       };
 
   render () {
@@ -110,4 +91,5 @@ class SearchProvider extends Component {
     )
   }
 }
+
 export default withRouter(SearchProvider);
