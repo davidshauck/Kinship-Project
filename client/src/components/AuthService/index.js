@@ -31,34 +31,29 @@ export default class AuthService {
 
   loggedIn() {
     // Checks if there is a saved token and it's still valid
-    // const token = this.getToken();
-    // if(token){
-    //   return !this.isTokenExpired(token);
-    // }else {
-    //   return false;
-    // }
-     // handwaiving here
-
-     return true 
+    const token = this.getToken();
+    if(token){
+      return !this.isTokenExpired(token);
+    }else {
+      return false;
+    }
   }
 
   isTokenExpired(token) {
     try {
       const decoded = decode(token);
       console.log("DECODED1", decoded)
-      if (decoded.exp < Date.now() / 1000 ) {
-        return true;
-      } else return false;
+      return decoded.exp < Date.now() / 1000
     } catch (err) {
       return err
     }
   }
 
-  // setToken(idToken) {
-  //   // Saves user token to localStorage
-  //   axios.defaults.headers.common["Authorization"] = `Bearer ${idToken}`;
-  //   localStorage.setItem("id_token", idToken);
-  // }
+  setToken(idToken) {
+    // Saves user token to localStorage
+    axios.defaults.headers.common["Authorization"] = `Bearer ${idToken}`;
+    localStorage.setItem("id_token", idToken);
+  }
 
   getToken() {
     // Retrieves the user token from localStorage
