@@ -18,14 +18,28 @@ export default class AuthService {
       });
   };
 
+  // Get profile is called first
   getProfile = () => {
-    return decode(this.getToken());
+    const token = this.getToken();
+    if(token != null ){
+      console.log("The user prrovided a token")
+      return decode(token);
+    }else{
+      return false
+    }
   };
 
   loggedIn() {
     // Checks if there is a saved token and it's still valid
-    const token = this.getToken();
-    return !!token && !this.isTokenExpired(token); // handwaiving here
+    // const token = this.getToken();
+    // if(token){
+    //   return !this.isTokenExpired(token);
+    // }else {
+    //   return false;
+    // }
+     // handwaiving here
+
+     return true 
   }
 
   isTokenExpired(token) {
@@ -36,15 +50,15 @@ export default class AuthService {
         return true;
       } else return false;
     } catch (err) {
-      return false;
+      return err
     }
   }
 
-  setToken(idToken) {
-    // Saves user token to localStorage
-    axios.defaults.headers.common["Authorization"] = `Bearer ${idToken}`;
-    localStorage.setItem("id_token", idToken);
-  }
+  // setToken(idToken) {
+  //   // Saves user token to localStorage
+  //   axios.defaults.headers.common["Authorization"] = `Bearer ${idToken}`;
+  //   localStorage.setItem("id_token", idToken);
+  // }
 
   getToken() {
     // Retrieves the user token from localStorage
