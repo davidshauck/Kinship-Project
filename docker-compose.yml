@@ -1,0 +1,30 @@
+version: '3.4'
+
+services:
+  kinship-project:
+    image: kinship-project
+    build: .
+    environment:
+    ports:
+      - 4000
+    depends_on:
+        - mongo
+    env_file: .env
+    environment:
+        - MONGO_HOSTNAME=$MONGO_HOSTNAME
+        - MONGO_PORT=$MONGO_PORT
+        - MONGO_DB=$MONGO_DB
+        - NODE_ENV=production
+  mongo:
+    image: mongo
+    container_name: myapp-mongodb
+    volumes:
+      - data-volume:/data/db
+    ports:
+      - "27017:27017"
+
+volumes:
+    data-volume:
+    node_modules:
+    web-root:
+      driver: local

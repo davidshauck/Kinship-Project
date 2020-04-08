@@ -4,12 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "seed": "node scripts/seedStudent.js && node scripts/seedTutor.js ",
-    "build": "cd client && npm run build",
+    "build": "cd client && npm i && npm run build",
     "heroku-postbuild": "npm run build"
   },
   "author": "",
