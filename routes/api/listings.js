@@ -19,8 +19,8 @@ router.route("/")
   // .put(siteController.saveReview)
   .post(siteController.createListing);
 
-  router.route("/messages")
-    .post(siteController.saveListingMessage)
+router.route("/messages")
+  .post(siteController.saveListingMessage)
 
 router.route("/search").post(siteController.findAllListings)
 // Matches with "/api/tutors/:id"
@@ -30,7 +30,7 @@ router.route("/:id")
   // .put(siteController.saveReview)
   .delete(siteController.removeListing);
 
-  // Any route with isAuthenticated is protected and you need a valid token
+// Any route with isAuthenticated is protected and you need a valid token
 // to access
 router.route("account/:id").get(isAuthenticated, (req, res) => {
   db.Listing.findById(req.params.id)
@@ -38,7 +38,10 @@ router.route("account/:id").get(isAuthenticated, (req, res) => {
       if (data) {
         res.json(data);
       } else {
-        res.status(404).send({ success: false, message: "No user found" });
+        res.status(404).send({
+          success: false,
+          message: "No user found"
+        });
       }
     })
     .catch(err => res.status(400).send(err));
