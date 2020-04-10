@@ -1,8 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useContext
-} from "react";
+import React, { useState, useEffect, useContext } from "react";
 import createAuth0Client from "@auth0/auth0-spa-js";
 
 const DEFAULT_REDIRECT_CALLBACK = () =>
@@ -27,10 +23,8 @@ export const Auth0Provider = ({
       setAuth0(auth0FromHook);
 
       if (window.location.search.includes("code=") &&
-        window.location.search.includes("state=")) {
-        const {
-          appState
-        } = await auth0FromHook.handleRedirectCallback();
+          window.location.search.includes("state=")) {
+        const { appState } = await auth0FromHook.handleRedirectCallback();
         onRedirectCallback(appState);
       }
 
@@ -71,9 +65,9 @@ export const Auth0Provider = ({
     setIsAuthenticated(true);
     setUser(user);
   };
-  return ( <
-    Auth0Context.Provider value = {
-      {
+  return (
+    <Auth0Context.Provider
+      value={{
         isAuthenticated,
         user,
         loading,
@@ -85,11 +79,9 @@ export const Auth0Provider = ({
         getTokenSilently: (...p) => auth0Client.getTokenSilently(...p),
         getTokenWithPopup: (...p) => auth0Client.getTokenWithPopup(...p),
         logout: (...p) => auth0Client.logout(...p)
-      }
-    } >
-    {
-      children
-    } <
-    /Auth0Context.Provider>
+      }}
+    >
+      {children}
+    </Auth0Context.Provider>
   );
 };

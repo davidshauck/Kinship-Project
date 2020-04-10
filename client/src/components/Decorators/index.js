@@ -4,9 +4,9 @@ import HamiltonSeal from "../../images/hamilton-seal.png"
 import WenhamSeal from "../../images/wenham-seal.png"
 import { useAuth0 } from "../../react-auth0-spa";
 
-export const Nav = props => {
+export const Links = props => {
   const { isAuthenticated, loginWithRedirect, logout, user} = useAuth0();
-  if (isAuthenticated) {
+  if (isAuthenticated && user) {
     return (
       <div className="navbar-buttons">
         <ul className="navbar-nav navbar-center">
@@ -32,14 +32,12 @@ export const Nav = props => {
           </Link>
           <Link push to="/">
             <li className="nav-item">
-              <div className="nav-link" href="/" onClick={() => logout()}>Logout from {user}</div>
+              <div className="nav-link" href="/" onClick={() => logout()}>Logout</div>
             </li>
           </Link>
         </ul>
       </div>
-
     );
-
   } else {
     return (
       <div className="navbar-buttons">
@@ -70,7 +68,7 @@ export const Nav = props => {
   }
 }
 
-export const Jumbotron = props => (
+export const NavJumbo = props => (
   <div className="jumbotron jumbotron-fluid header">
     <div className="container">
       <Link to="/">
@@ -81,6 +79,7 @@ export const Jumbotron = props => (
       <p className="subhead">Serving Community – Providing Peace-of-Mind</p>
     </div>
     <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm bg-dark">
+      <Links/>
     </nav>
   </div>
 )

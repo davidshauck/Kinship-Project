@@ -1,15 +1,13 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from "react"; 
 import { Col, Row, Container } from "../components/Grid";
 import { FormBtn } from "../components/Form";
-import AuthService from "../components/AuthService";
+
 import "./style.css";
 
 
 class Login extends Component {
   constructor() {
     super();
-    this.Auth = new AuthService();
   }
 
   componentDidMount() {
@@ -17,14 +15,6 @@ class Login extends Component {
       this.props.history.replace("/");
     }
   }
-
-  // handleInputChange = event => {
-  //   console.log(event.target.value);
-  //   const { name, value } = event.target;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // }; 
 
   handleChange = event => {
     const { name, value } = event.target;
