@@ -1,0 +1,124 @@
+.navbar {
+    /* margin-bottom: 20px; */
+    /* height: 40px; */
+    text-align: center !important;
+    padding: 0px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.jumbotron {
+    width: 100%;
+    margin: 0px !important;
+}
+
+.row {
+    margin-top: 13px !important;
+}
+
+
+.hamilton-seal {
+    z-index: 100;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 110px;
+    text-align: left !important;
+    display: inline-block;
+    opacity: 0.6;
+}
+
+.wenham-seal{
+    z-index: 100;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 110px;
+    text-align: left !important;
+    display: inline-block;
+    opacity: 0.6;
+}
+
+.nav-link {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+}
+
+.header{
+    padding-top: 35px !important;
+    background-color: #28a745 !important;
+    font-family: 'Gotu', sans-serif;
+    /* text-transform: uppercase; */
+    font-weight: bold;
+    display: inline-block;
+    color: white;
+    height: 155px;
+    /* border-top: 3px solid orange;
+    border-bottom: 3px solid orange; */
+    line-height: 10px;
+    /* border-bottom: 30px solid #343a40; */
+}
+
+.title {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: 2px;
+    font-size: 60px;
+    text-align: center;
+    /* text-transform: uppercase; */
+    margin-top: 0px;
+}
+
+.subhead{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
+    text-transform: capitalize !important;
+    font-weight: normal;
+    line-height: 10px;
+    font-size: 18px !important;
+    color: white;
+    text-align: center !important;
+    display: block;
+}
+
+/* .nav-item {
+    text-align: center;
+} */
+
+.navbar-buttons {
+    font-family:"Mark","Avenir","Helvetica","Arial",sans-serif;
+    font-size: 13px;
+    padding-right: 0px !important;
+    margin-right: 0px !important;
+    white-space: nowrap;
+    color: white !important;
+    text-align: center !important;
+}
+
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 10px);
+    color: white !important;
+    text-align: center !important;
+    margin-top: -20px;
+    height: 200px;
+}
+
+
+.signup-button{
+    font-family:"Mark","Avenir","Helvetica","Arial",sans-serif;
+    color: white;
+    font-size: 13px !important;
+    /* border-radius: 20px 20px 20px 20px !important;
+    padding: 5px 15px 5px 15px !important; */
+}
+
+li {
+    margin: 0 5px 0 5px;
+    text-align: center !important;
+}
+
+ul {
+    text-decoration: none;
+    text-align: center !important;
+}

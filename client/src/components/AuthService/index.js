@@ -1,70 +1,26 @@
-import decode from "jwt-decode";
-import axios from "axios";
+// src/components/PrivateRoute.js
 
-export default class AuthService {
-  login = (email, password) => {
-    console.log("LOGIN INFO: ", email, password)
-    // Get a token
-    return axios
-      .post("/api/listings/login", {
-        email: email,
-        password: password
-      })
-      .then(res => {
-        // set the token once the user logs in
-        this.setToken(res.data.token);
-        // return the rest of the response
-        return res;
+import React, { useEffect } from "react";
+import { Route } from "react-router-dom";
+import { useAuth0 } from "../../react-auth0-spa";
+
+export const PrivateRoute = ({ component: Component, path, ...rest }) => {
+  const { loading, isAuthenticated, loginWithRedirect } = useAuth0();
+
+  useEffect(() => {
+    if (loading || isAuthenticated) {
+      return;
+    }
+    const fn = async () => {
+      await loginWithRedirect({
+        appState: {targetUrl: window.location.pathname}
       });
-  };
+    };
+    fn();
+  }, [loading, isAuthenticated, loginWithRedirect, path]);
 
-  // Get profile is called first
-  getProfile = () => {
-    const token = this.getToken();
-    if(token != null ){
-      console.log("The user prrovided a token")
-      return decode(token);
-    }else{
-      return false
-    }
-  };
+  const render = props =>
+    isAuthenticated === true ? <Component {...props} /> : null;
 
-  loggedIn() {
-    // Checks if there is a saved token and it's still valid
-    const token = this.getToken();
-    if(token){
-      return !this.isTokenExpired(token);
-    }else {
-      return false;
-    }
-  }
-
-  isTokenExpired(token) {
-    try {
-      const decoded = decode(token);
-      console.log("DECODED1", decoded)
-      return decoded.exp < Date.now() / 1000
-    } catch (err) {
-      return err
-    }
-  }
-
-  setToken(idToken) {
-    // Saves user token to localStorage
-    axios.defaults.headers.common["Authorization"] = `Bearer ${idToken}`;
-    localStorage.setItem("id_token", idToken);
-  }
-
-  getToken() {
-    // Retrieves the user token from localStorage
-    return localStorage.getItem("id_token");
-  }
-
-  logout() {
-    // Clear user token and profile data from localStorage
-    axios.defaults.headers.common["Authorization"] = null;
-    localStorage.removeItem("id_token");
-    // this will reload the page and reset the state of the application
-    window.location.reload("/");
-  }
-}
+  return <Route path={path} render={render} {...rest} />;
+};

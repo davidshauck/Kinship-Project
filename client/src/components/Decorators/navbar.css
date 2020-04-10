@@ -1,7 +1,3 @@
-/* #navbarNav {
-    text-align: right;
-} */
-
 .navbar {
     /* margin-bottom: 20px; */
     /* height: 40px; */
@@ -21,7 +17,7 @@
 }
 
 
-.hamilton-seal {
+.hamilton_seal {
     z-index: 100;
     position: absolute;
     top: 20px;
@@ -32,7 +28,7 @@
     opacity: 0.6;
 }
 
-.wenham-seal {
+.wenham-seal{
     z-index: 100;
     position: absolute;
     top: 20px;
@@ -49,7 +45,7 @@
     color: white;
 }
 
-.header {
+.header{
     padding-top: 35px !important;
     background-color: #28a745 !important;
     font-family: 'Gotu', sans-serif;
@@ -64,7 +60,7 @@
     /* border-bottom: 30px solid #343a40; */
 }
 
-h1.title {
+.title {
     font-family: 'Anton', sans-serif;
     letter-spacing: 2px;
     font-size: 60px;
@@ -73,7 +69,7 @@ h1.title {
     margin-top: 0px;
 }
 
-.subhead {
+.subhead{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
     text-transform: capitalize !important;
     font-weight: normal;
@@ -101,7 +97,7 @@ h1.title {
 .navbar-nav.navbar-center {
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 10px);
+    transform: translate(-50%, 10px;
     color: white !important;
     text-align: center !important;
     margin-top: -20px;
@@ -109,7 +105,7 @@ h1.title {
 }
 
 
-.signup-button {
+.signup-button{
     font-family:"Mark","Avenir","Helvetica","Arial",sans-serif;
     color: white;
     font-size: 13px !important;

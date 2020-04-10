@@ -8,7 +8,6 @@ import { List, ListItem } from "../components/List";
 import ListingCard from "../components/ListingCard";
 import SearchForm from "../components/SearchForm";
 import { SearchConsumer } from '../SearchProvider'
-import TownHall from "../images/hamilton-background3.jpg"
 
 
 import "./style.css";

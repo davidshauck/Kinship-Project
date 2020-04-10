@@ -1,7 +1,6 @@
 // src/providers/SearchProvider.js
 import React, { Component } from 'react'
 import API from "./utils/API";
-import AuthService from "./components/AuthService";
 import {withRouter} from "react-router-dom";
 
 // Set Up The Initial Context
@@ -13,7 +12,6 @@ export const SearchConsumer = SearchContext.Consumer
 class SearchProvider extends Component {
   constructor (props) {
     super(props)
-    this.Auth = new AuthService();
   }
 
     state = {
