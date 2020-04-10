@@ -11,6 +11,7 @@ const MongoStore = require('connect-mongo')(session)
 const passport = require('./passport');
 const app = express();
 const PORT = process.env.PORT || 3001;
+const uri = process.env.MONGODB_URI || "mongodb://localhost/HamiltonWenhamDB"
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));

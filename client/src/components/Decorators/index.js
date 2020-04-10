@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 import HamiltonSeal from "../../images/hamilton-seal.png"
 import WenhamSeal from "../../images/wenham-seal.png"
 import { useAuth0 } from "../../react-auth0-spa";
-let loggedInUser;
 
 export const Nav = props => {
-  const { isAuthenticated, loginWithRedirect, logout} = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout, user} = useAuth0();
   if (isAuthenticated) {
     return (
       <div className="navbar-buttons">
@@ -33,7 +32,7 @@ export const Nav = props => {
           </Link>
           <Link push to="/">
             <li className="nav-item">
-              <div className="nav-link" href="/" onClick={() => logout()}>Logout</div>
+              <div className="nav-link" href="/" onClick={() => logout()}>Logout from {user}</div>
             </li>
           </Link>
         </ul>
@@ -69,7 +68,6 @@ export const Nav = props => {
       </div>
     )
   }
-
 }
 
 export const Jumbotron = props => (
