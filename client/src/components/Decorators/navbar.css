@@ -16,6 +16,9 @@
     margin-top: 13px !important;
 }
 
+.nav-link:hover {
+    color: white;
+}
 
 .hamilton_seal {
     z-index: 100;
@@ -67,6 +70,13 @@
     text-align: center;
     /* text-transform: uppercase; */
     margin-top: 0px;
+    color: white;
+    text-deocration: none;
+}
+
+.title:hover, title:link {
+    color:white;
+    text-decoration: none;
 }
 
 .subhead{
@@ -78,6 +88,10 @@
     color: white;
     text-align: center !important;
     display: block;
+}
+
+a:hover, a:link {
+    text-decoration:none;
 }
 
 /* .nav-item {
@@ -97,7 +111,7 @@
 .navbar-nav.navbar-center {
     position: absolute;
     left: 50%;
-    transform: translate(-50%, 10px;
+    transform: translate(-50%, 10px);
     color: white !important;
     text-align: center !important;
     margin-top: -20px;
