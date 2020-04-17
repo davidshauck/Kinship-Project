@@ -11,7 +11,7 @@ export const Links = props => {
     return (
       <div className="navbar-buttons">
         <ul className="navbar-nav navbar-center">
-          <Link push to="/signup">
+          <Link push to="/new-listing">
             <li className="nav-item">
               <div className="nav-link">Add your listing</div>
             </li>
@@ -41,7 +41,7 @@ export const Links = props => {
               <div className="nav-link">Help For Businesses</div>
             </li>
           </Link>
-          <Link push to="/signup">
+          <Link push to="/new-listing">
             <li className="nav-item">
               <div className="nav-link">Add your listing</div>
             </li>

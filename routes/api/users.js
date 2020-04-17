@@ -12,6 +12,12 @@ router.route("/login").post((req, res) => {
     .catch(err => res.status(400).json(err));
 });
 
+router.route("/user/login", (req, res) => {
+  auth.getUser(req.body.user).then(user => res.json({
+    user
+  }))
+})
+
 // Matches with "/api/students"
 router.route("/")
   .get(siteController.findAllUsers)
@@ -32,7 +38,10 @@ router.route("account/:id").get(isAuthenticated, (req, res) => {
       if (data) {
         res.json(data);
       } else {
-        res.status(404).send({ success: false, message: "No user found" });
+        res.status(404).send({
+          success: false,
+          message: "No user found"
+        });
       }
     })
     .catch(err => res.status(400).send(err));
