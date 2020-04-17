@@ -63,12 +63,12 @@ export const Links = props => {
 export const NavJumbo = props => (
   <div className="jumbotron jumbotron-fluid header">
     <div className="container">
-      <Link to="/">
+      <Link to="/" style={{ textDecoration: 'none' }}>
         <img className="hamilton-seal" alt="Hamilton Seal" href="/" src={HamiltonSeal} />
         <img className="wenham-seal" alt="Wenham Seal" href="/" src={WenhamSeal} />
+        <h1 className="title">Virtual Hamilton-Wenham</h1>
+        <p className="subhead">Serving Community – Providing Peace-of-Mind</p>
       </Link>
-      <h1 className="title">Virtual Hamilton-Wenham</h1>
-      <p className="subhead">Serving Community – Providing Peace-of-Mind</p>
     </div>
     <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm bg-dark">
       <Links />
