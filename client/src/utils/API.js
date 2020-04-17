@@ -6,7 +6,7 @@ export default {
     return axios.get("/api/students");
   },
   getUser: function (user) {
-    return axios.post("/api/user", {
+    return axios.post("/api/login/user", {
       user
     })
   },
