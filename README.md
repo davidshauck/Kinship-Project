@@ -16,3 +16,22 @@ cd ..
 ```bash
 npm run start:dev
 ```
+
+
+# Heroku Deployment
+
+The app is currently deployed on Heroku using their container service. This enables users to deploy their containerized applications using Docker.
+
+For more information on using Docker: See [Installing Docker](https://docs.docker.com/get-docker/)
+
+A shortcut for running a local deployment of the application has been added to the `package.json`
+
+```bash
+npm run docker:build
+```
+
+**Although not advised** one can deploy the application from their local command line by running the following:
+
+```bash
+heroku container:login
+heroku container:push web
