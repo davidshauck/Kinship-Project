@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Checkbox from "../components/Checkbox";
 import { Input } from "../components/Form"
 import API from "../utils/API";
-import { FormBtn } from "../components/Form";
 import { useAuth0 } from "../react-auth0-spa";
 import { Redirect } from "react-router-dom"
 import { Formik } from "formik";
@@ -73,9 +72,7 @@ const ListingForm = (props) => {
           errors,
           touched,
           handleChange,
-          handleBlur,
           handleSubmit,
-          isSubmitting
         }) => (
             <form onSubmit={handleSubmit}>
               <Input
