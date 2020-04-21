@@ -9,8 +9,7 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*' server.js\" \"npm run client\"",
     "client": "cd client && npm run start",
     "seed": "node scripts/seedStudent.js && node scripts/seedTutor.js ",
-    "build": "cd client && npm install && npm run build",
-    "heroku-postbuild": "npm run build"
+    "build": "cd client && npm install && npm run build"
   },
   "author": "",
   "license": "ISC",
