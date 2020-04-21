@@ -35,3 +35,4 @@ npm run docker:build
 ```bash
 heroku container:login
 heroku container:push web
+docker pull mongo
