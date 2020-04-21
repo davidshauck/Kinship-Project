@@ -5,21 +5,12 @@ import API from "../utils/API";
 import { FormBtn } from "../components/Form";
 import { useAuth0 } from "../react-auth0-spa";
 import { Redirect } from "react-router-dom"
-const OPTIONS = ["Dining", "Essentials", "Take-Out", "Delivery", "Retail", "Services"]
-
 
 const ListingSignup = props => {
 
-  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
+  const { isAuthenticated, user } = useAuth0();
   const [listings, setListings] = useState({
-    checkboxes: OPTIONS.reduce(
-      (options, option) => ({
-        ...options,
-        [option]: false
-      }),
-      {}
-    ),
-    options_hooks: OPTIONS,
+    options: [{ name: "dining", key: "dining", label: "Dining" }, { name: "Essentials", key: "essentials", label: "essentials" }, { name: "Take-Out", key: "take-out", label: "Take Out" }, { name: "Delivery", key: "delivery", label: "Delivery" }, { name: "Retail", key: "retail", label: "Retail" }, { name: "Services", key: "services", label: "Services" }],
     email: "",
     password: "",
     name: "",
@@ -48,26 +39,10 @@ const ListingSignup = props => {
 
   const handleCheckboxChange = changeEvent => {
     const { name } = changeEvent.target;
-    setListings(prevState => ({
-      checkboxes: {
-        ...prevState.checkboxes,
-        [name]: !prevState.checkboxes[name]
-      }
-    }));
-  };
-
-  const handleLogin = event => {
-    event.preventDefault();
-    this.Auth.login(listings.email, listings.password)
-      .then(res => {
-        // once user is logged in
-        // take them to their profile page
-        this.props.history.replace(`/listing`);
-      })
-      .then(() => window.location.reload(false))
-      .catch(err => {
-        console.log(err.response.data.message);
-      });
+    setListings({
+      ...listings,
+      [changeEvent.target.name]: changeEvent.target.checked
+    });
   };
 
   const handleFormSubmit = formSubmitEvent => {
@@ -105,18 +80,6 @@ const ListingSignup = props => {
 
   };
 
-  const createCheckbox = option => (
-    <Checkbox
-      label={option}
-      isSelected={listings.checkboxes[option]}
-      onCheckboxChange={handleCheckboxChange}
-      key={option}
-    />
-  );
-
-  //Obj.keys, then loop over that and push the 'true' to an array
-
-  // const createCheckboxes = () => OPTIONS.map(listings.checkboxes);
   if (!isAuthenticated) {
     return <Redirect to="login" />
 
@@ -128,6 +91,7 @@ const ListingSignup = props => {
           <Input
             name="name"
             type="text"
+            value={listings.name}
             placeholder="Business Name (required)"
             className="col-11 signup-boxes"
             onChange={e => handleInputChange(e)}
@@ -213,7 +177,15 @@ const ListingSignup = props => {
 
 
           <h4 style={{ color: "black" }}>Categories (check all that apply)</h4>
-          {listings.options_hooks.map(listing => <p>{listing}</p>)}
+          {listings.options.map((item, index) => (
+            <Checkbox
+              name={item.name}
+              label={item.name}
+              checked={listings.options[item.name]}
+              isSelected={listings.options[item.name]}
+              onChange={handleCheckboxChange}
+            />
+          ))}
 
           <div className="col-12">
             <h4 style={{ color: "black" }}>Additional details</h4>
@@ -249,11 +221,6 @@ const ListingSignup = props => {
                     placeholder="Password"
                     className={"form-control login-signup-password-field"}
                     onChange={handleInputChange}
-                  />
-                  <FormBtn
-                    button={"Submit"}
-                    onClick={handleLogin}
-                    className={"btn btn-success login-submit-button"}
                   />
                 </div>
               ) : (<div></div>)}
