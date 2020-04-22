@@ -2,6 +2,9 @@ import axios from "axios";
 
 export default {
   // Gets all students
+  createListing: (listing) => {
+    return axios.post("/api/listings", listing)
+  },
   getStudents: function () {
     return axios.get("/api/students");
   },

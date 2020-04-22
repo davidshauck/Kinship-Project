@@ -4,6 +4,14 @@ const bcrypt = require("bcrypt-nodejs");
 const Schema = mongoose.Schema;
 
 const listingSchema = new Schema({
+  user: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true
+  },
   name: {
     type: String,
     required: true
@@ -19,11 +27,11 @@ const listingSchema = new Schema({
     type: String,
     required: true
   },
-  state: {
+  us_state: {
     type: String,
     required: true
   },
-  zip: {
+  zip_code: {
     type: Number,
     required: true
   },
@@ -54,32 +62,6 @@ const listingSchema = new Schema({
     type: String
   },
 });
-
-// Execute before each listing.save() call
-listingSchema.pre("save", function (callback) {
-  let listing = this;
-
-  // Break out if the password hasn't changed
-  if (!listing.isModified("password")) return callback();
-
-  // Password changed so we need to hash it
-  bcrypt.genSalt(5, function (err, salt) {
-    if (err) return callback(err);
-
-    bcrypt.hash(listing.password, salt, null, function (err, hash) {
-      if (err) return callback(err);
-      listing.password = hash;
-      callback();
-    });
-  });
-});
-
-listingSchema.methods.verifyPassword = function (password, cb) {
-  bcrypt.compare(password, this.password, function (err, isMatch) {
-    if (err) return cb(err);
-    cb(null, isMatch);
-  });
-};
 
 const Listing = mongoose.model("Listing", listingSchema);
 
