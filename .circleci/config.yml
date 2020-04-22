@@ -9,9 +9,28 @@ jobs:
       - checkout
       - node/with-cache:
           steps:
-            - run: npm install
+            - run: npm install && cd client && npm install
             - run: npm test
+  deploy:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - run:
+          name: Deployment
+          command: echo "Deploy this"
+
 workflows:
-    build-and-test:
-      jobs:
-        - build-and-test
+  build-and-test:
+    jobs:
+      - build-and-test
+  build-test-deploy:
+    jobs:
+      - build-and-test:
+          filters:
+            branches:
+              only:
+                - develop
+      - deploy
+      
+    

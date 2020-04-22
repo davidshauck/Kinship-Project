@@ -8,9 +8,9 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*' server.js\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "seed": "node scripts/seedStudent.js && node scripts/seedTutor.js ",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build"
+    "docker:build": "docker build . -t kinship-project",
+    "build": "cd client && npm i && npm run build",
+    "seed": "node scripts/seedStudent.js && node scripts/seedTutor.js"
   },
   "author": "",
   "license": "ISC",
