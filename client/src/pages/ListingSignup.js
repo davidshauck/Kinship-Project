@@ -4,28 +4,9 @@ import { Input } from "../components/Form"
 import API from "../utils/API";
 import { useAuth0 } from "../react-auth0-spa";
 import { Redirect } from "react-router-dom"
-import { Formik } from "formik";
+import { Formik, Form } from "formik";
 
 const ListingForm = (props) => {
-  const form = {
-    user: props.user,
-    email: props.email, name: "", address1: "",
-    address2: "",
-    city: "",
-    us_state: "",
-    zip: "",
-    image: "",
-    telephone: "",
-    website: "",
-    description: "",
-    categories: "",
-    twitter: "",
-    facebook: "",
-    instagram: "",
-    options: ["Dining", "Essentials", "Take-Out", "Delivery", "Retail", "Services"],
-    chosen: []
-  }
-
   const toggleCheckbox = label => {
     if (this.selectedCheckboxes.has(label)) {
       this.selectedCheckboxes.delete(label);
@@ -34,20 +15,38 @@ const ListingForm = (props) => {
     }
   }
 
-  const createCheckbox = option => (
-    <Checkbox
-      label={option}
-      isSelected={form.chosen[option]}
-      onCheckboxChange={toggleCheckbox}
-      key={option}
-    />
-  );
+  // const createCheckbox = option => (
+  //   <Checkbox
+  //     label={option}
+  //     isSelected={form.chosen[option]}
+  //     onCheckboxChange={toggleCheckbox}
+  //     key={option}
+  //   />
+  // );
 
   return (
-    <div>
+    <div class="container">
       <h4 style={{ color: "black" }}>Create your business profile</h4>
       <Formik
-        initialValues={form}
+        initialValues={{
+          user: props.user,
+          email: props.email, name: "", address1: "",
+          address2: "",
+          city: "",
+          us_state: "",
+          zip: "",
+          image: "",
+          telephone: "",
+          website: "",
+          description: "",
+          categories: "",
+          twitter: "",
+          facebook: "",
+          instagram: "",
+          options: ["Dining", "Essentials", "Take-Out", "Delivery", "Retail", "Services"],
+          chosen: []
+        }
+        }
         validate={values => {
           const errors = {};
           if (/^\d+$/.test(values.email) === false) {
@@ -56,15 +55,7 @@ const ListingForm = (props) => {
           return errors
         }}
         onSubmit={(values, { setSubmitting }) => {
-          Object.keys(values.options)
-            .filter(checkbox => values.checkboxes[checkbox])
-            .forEach(checkbox => {
-              values.categories.push(checkbox);
-            });
-          API.saveListing({
-          }).then(res => {
-            alert("Good to go!")
-          })
+          console.log(values)
         }}
       >
         {({
@@ -74,7 +65,7 @@ const ListingForm = (props) => {
           handleChange,
           handleSubmit,
         }) => (
-            <form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit}>
               <Input
                 name="name"
                 type="text"
@@ -173,8 +164,6 @@ const ListingForm = (props) => {
                 onChange={handleChange}
               />
               <h4 style={{ color: "black" }}>Categories (check all that apply)</h4>
-              {/* {values.options.map(listing => <p>{listing}</p>)} */}
-              {createCheckbox(values.options)}
               <div className="col-12">
                 <h4 style={{ color: "black" }}>Additional details</h4>
                 <textarea className="form-control" rows="10" name="description" onChange={handleChange} placeholder="Message to your customers, store hours, etc." />
@@ -182,7 +171,7 @@ const ListingForm = (props) => {
                   Save
                 </button>
               </div>
-            </form>
+            </Form>
           )}
       </Formik>
     </div>
@@ -191,7 +180,6 @@ const ListingForm = (props) => {
 
 const ListingSignup = props => {
   const { isAuthenticated, user } = useAuth0();
-
   if (!isAuthenticated) {
     return <Redirect to="login" />
   } else {
