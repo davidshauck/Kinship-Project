@@ -19,7 +19,7 @@ export const Links = props => {
           <li className="nav-item">
             <div className="nav-link" href="mailto:admin@kinshipfarm.org?subject=Inquiry">Contact</div>
           </li>
-          <Link to={"/account"}>
+          <Link to="/account">
             <li className="nav-item">
               <div className="nav-link">My account</div>
             </li>
@@ -49,7 +49,7 @@ export const Links = props => {
           <li className="nav-item">
             <a className="nav-link" href="mailto:admin@kinshipfarm.org?subject=Inquiry">Contact</a>
           </li>
-          <Link>
+          <Link to="/login">
             <li className="nav-item">
               <div className="nav-link" onClick={() => loginWithRedirect({})}>Login</div>
             </li>
