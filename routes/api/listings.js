@@ -16,21 +16,16 @@ router.route("/login").post((req, res) => {
 // Matches with "/api/listings"
 router.route("/")
   .get(siteController.findAllListings)
-  // .put(siteController.saveReview)
   .post(siteController.createListing);
 
-  router.route("/messages")
-    .post(siteController.saveListingMessage)
-
 router.route("/search").post(siteController.findAllListings)
-// Matches with "/api/tutors/:id"
 
+// Matches with "/api/listings/:id"
 router.route("/:id")
   .get(siteController.findListingById)
-  // .put(siteController.saveReview)
   .delete(siteController.removeListing);
 
-  // Any route with isAuthenticated is protected and you need a valid token
+// Any route with isAuthenticated is protected and you need a valid token
 // to access
 router.route("account/:id").get(isAuthenticated, (req, res) => {
   db.Listing.findById(req.params.id)
