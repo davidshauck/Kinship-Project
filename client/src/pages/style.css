@@ -2,21 +2,6 @@
     box-sizing: border-box;
 }
 
-/* html, body {
-    height: 100%;
-    margin: 0;
-}
-
-.wrapper {
-    min-height: calc(100vh - 70px);
-}
-
-.push, .footer {
-    height: 40px;
-    width: 100%;
-    margin-top: -40px
-} */
-
 .content-inside {
     padding: 20px;
     padding-bottom: 50px;
@@ -45,11 +30,6 @@ form.search {
 form.search button[type="submit"] {
   float: right;
 }
-
-/* .search-button {
-    color: black !important;
-    background-color: #cccccc
-} */
 
 .form-group {
     display: flex;
