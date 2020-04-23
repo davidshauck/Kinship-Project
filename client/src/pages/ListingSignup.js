@@ -3,12 +3,14 @@ import Checkbox from "../components/Checkbox";
 import { Input } from "../components/Form"
 import API from "../utils/API";
 import { FormBtn } from "../components/Form";
+import { useAuth0 } from "../react-auth0-spa";
+import { Redirect } from "react-router-dom"
+const OPTIONS = ["Dining", "Essentials", "Take-Out", "Delivery", "Retail", "Services"]
 
-const OPTIONS = [ "Dining","Essentials", "Take-Out", "Delivery", "Retail", "Services" ]
 
+const ListingSignup = props => {
 
-const  ListingSignup = props => {
-
+  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
   const [listings, setListings] = useState({
     checkboxes: OPTIONS.reduce(
       (options, option) => ({
@@ -16,26 +18,26 @@ const  ListingSignup = props => {
         [option]: false
       }),
       {}
-    ),  
-        options_hooks: OPTIONS,
-        email: "",
-        password: "",
-        name: "",
-        address1: "",
-        address2: "",
-        city: "",
-        usState: "",
-        zip: "",
-        telephone: "",
-        categories: ["On"],
-        photo: "",
-        website: "",
-        description: "",
-        facebook: "",
-        twitter: "",
-        instagram: "",
-        disabledStatus: true     
-    });
+    ),
+    options_hooks: OPTIONS,
+    email: "",
+    password: "",
+    name: "",
+    address1: "",
+    address2: "",
+    city: "",
+    usState: "",
+    zip: "",
+    telephone: "",
+    categories: ["On"],
+    photo: "",
+    website: "",
+    description: "",
+    facebook: "",
+    twitter: "",
+    instagram: "",
+    disabledStatus: true
+  });
 
   const handleInputChange = event => {
     const { name, value } = event.target;
@@ -44,9 +46,8 @@ const  ListingSignup = props => {
     });
   };
 
- const  handleCheckboxChange = changeEvent => {
+  const handleCheckboxChange = changeEvent => {
     const { name } = changeEvent.target;
-
     setListings(prevState => ({
       checkboxes: {
         ...prevState.checkboxes,
@@ -70,7 +71,7 @@ const  ListingSignup = props => {
   };
 
   const handleFormSubmit = formSubmitEvent => {
-      console.log(listings)
+    console.log(listings)
     formSubmitEvent.preventDefault();
 
 
@@ -79,30 +80,29 @@ const  ListingSignup = props => {
       .forEach(checkbox => {
         listings.categories.push(checkbox);
       });
-      API.saveListing({
-        email: listings.email,
-        password: listings.password,
-        name: listings.name,
-        address1: listings.address1,
-        address2: listings.address2,
-        city: listings.city,
-        state: listings.usState,
-        zip: listings.zip,
-        image: listings.image,
-        telephone: listings.telephone,
-        website: listings.website,
-        description: listings.description,
-        categories: listings.categories,
-        twitter: listings.twitter,
-        facebook: listings.facebook,
-        instagram: listings.instagram
-      }).then(res => {
-        if (res.data._id) {
-          let disabledStatus = false;
-          setListings({ ...listings, disabledStatus: disabledStatus })
-        }
-      })
-      
+    API.saveListing({
+      email: user.email,
+      name: listings.name,
+      address1: listings.address1,
+      address2: listings.address2,
+      city: listings.city,
+      state: listings.usState,
+      zip: listings.zip,
+      image: listings.image,
+      telephone: listings.telephone,
+      website: listings.website,
+      description: listings.description,
+      categories: listings.categories,
+      twitter: listings.twitter,
+      facebook: listings.facebook,
+      instagram: listings.instagram
+    }).then(res => {
+      if (res.data._id) {
+        let disabledStatus = false;
+        setListings({ ...listings, disabledStatus: disabledStatus })
+      }
+    })
+
   };
 
   const createCheckbox = option => (
@@ -117,168 +117,152 @@ const  ListingSignup = props => {
   //Obj.keys, then loop over that and push the 'true' to an array
 
   // const createCheckboxes = () => OPTIONS.map(listings.checkboxes);
-    const {options_hooks} = listings
-    return (
+  if (!isAuthenticated) {
+    return <Redirect to="login" />
 
+  } else {
+    return (
       <div className="list-overflow-container register-box">
-      <h4 style={{color: "black"}}>Create your business profile</h4>
-      <form onSubmit={handleFormSubmit}>
-        <Input 
-            name="email" 
-            type="email" 
-            className="col-6 signup-boxes"
-            placeholder="Email (required)" 
-            onChange={e => handleInputChange(e)}
-        />
-        <Input 
-            name="password" 
-            type="password" 
-            className="col-5 signup-boxes"
-            placeholder="Password (required)" 
-            onChange={e => handleInputChange(e)}
-        />
-        <Input 
-            name="name" 
+        <h4 style={{ color: "black" }}>Create your business profile</h4>
+        <form onSubmit={handleFormSubmit}>
+          <Input
+            name="name"
             type="text"
-            placeholder="Business Name (required)" 
+            placeholder="Business Name (required)"
             className="col-11 signup-boxes"
             onChange={e => handleInputChange(e)}
-        />
-        <Input 
-            name="address1" 
+          />
+          <Input
+            name="address1"
             type="text"
             className="col-11 signup-boxes"
-            placeholder="Address (required)" 
+            placeholder="Address (required)"
             onChange={e => handleInputChange(e)}
-        />
-        <Input 
-            name="address2" 
+          />
+          <Input
+            name="address2"
             type="text"
             className="col-11 signup-boxes"
-            placeholder="Address" 
+            placeholder="Address"
             onChange={e => handleInputChange(e)}
-        />
-        <Input 
-            name="city" 
+          />
+          <Input
+            name="city"
             type="text"
             className="col-5 signup-boxes"
-            placeholder="City" 
+            placeholder="City"
             onChange={e => handleInputChange(e)}
-        />
-        <Input 
-            name="usState" 
+          />
+          <Input
+            name="usState"
             type="text"
             className="col-2 signup-boxes"
-            placeholder="State" 
+            placeholder="State"
             onChange={e => handleInputChange(e)}
-        />
-        <Input 
-            name="zip" 
+          />
+          <Input
+            name="zip"
             type="text"
             className="col-4 signup-boxes"
-            placeholder="Zip*" 
+            placeholder="Zip*"
             onChange={e => handleInputChange(e)}
-        />
-        <Input 
-            name="telephone" 
+          />
+          <Input
+            name="telephone"
             type="text"
             className="col-11 signup-boxes"
-            placeholder="Telephone*" 
+            placeholder="Telephone*"
             onChange={e => handleInputChange(e)}
-        />
-        <Input 
-            name="image" 
-            type="text" 
+          />
+          <Input
+            name="image"
+            type="text"
             className="col-11 signup-boxes"
-            placeholder="Photo (paste in url)" 
+            value={user.picture ? user.picture : ""}
+            placeholder="Photo (paste in url)"
             onChange={e => handleInputChange(e)}
-        />
-        <Input 
-            name="website" 
-            type="text" 
+          />
+          <Input
+            name="website"
+            type="text"
             className="col-11 signup-boxes"
-            placeholder="Website" 
+            placeholder="Website"
             onChange={e => handleInputChange(e)}
-        />
-        <Input 
-            name="twitter" 
+          />
+          <Input
+            name="twitter"
             type="text"
             className="col-4 signup-boxes"
-            placeholder="Twitter (full URL)" 
+            placeholder="Twitter (full URL)"
             onChange={e => handleInputChange(e)}
-        />
-        <Input 
-            name="facebook" 
+          />
+          <Input
+            name="facebook"
             type="text"
             className="col-3 signup-boxes"
-            placeholder="Facebook (full URL)" 
+            placeholder="Facebook (full URL)"
             onChange={e => handleInputChange(e)}
-        />
-        <Input 
-            name="instagram" 
+          />
+          <Input
+            name="instagram"
             type="text"
             className="col-4 signup-boxes"
-            placeholder="Instagram (full URL)" 
+            placeholder="Instagram (full URL)"
             onChange={e => handleInputChange(e)}
-        />
+          />
 
 
-        <h4 style={{color: "black"}}>Categories (check all that apply)</h4>
-              {/* {listings.options_hooks.map(listing =>{
-                createCheckbox(listing)
-              })} */}
+          <h4 style={{ color: "black" }}>Categories (check all that apply)</h4>
+          {listings.options_hooks.map(listing => <p>{listing}</p>)}
 
-              <div className="col-12">
-              <h4 style={{color: "black"}}>Additional details</h4>
+          <div className="col-12">
+            <h4 style={{ color: "black" }}>Additional details</h4>
 
             <textarea className="form-control" rows="10" name="description" onChange={e => handleInputChange(e)} placeholder="Message to your customers, store hours, etc." />
             <form className="div-test">
 
               {/* <Link push to="/login"> */}
-                <button type="submit" className="btn btn-secondary save-button">
-                    Save
+              <button type="submit" className="btn btn-secondary save-button">
+                Save
                 </button>
-                {/* <button type="submit" href="/login" className="btn btn-success login-button" disabled={listings.disabledStatus} onClick={() => props.history.push("/login")} >
+              {/* <button type="submit" href="/login" className="btn btn-success login-button" disabled={listings.disabledStatus} onClick={() => props.history.push("/login")} >
                     Login
                 </button> */}
-                { !listings.disabledStatus ? (
-              <div>
-              <input 
-                name="email" 
-                type="email" 
-                id="email"
-                placeholder="Email address" 
-                className={"form-control login-signup-email-field"}
+              {!listings.disabledStatus ? (
+                <div>
+                  <input
+                    name="email"
+                    type="email"
+                    id="email"
+                    placeholder="Email address"
+                    className={"form-control login-signup-email-field"}
 
-                onChange={handleInputChange}
-              />
-              {/* </div>
+                    onChange={handleInputChange}
+                  />
+                  {/* </div>
               <div className="form-group"> */}
 
-              <input 
-                name="password" 
-                type="password" 
-                id="pwd"
-                placeholder="Password" 
-                className={"form-control login-signup-password-field"}
-                onChange={handleInputChange}
-              />
-              <FormBtn 
-                button={"Submit"}
-                onClick={handleLogin}
-                className={"btn btn-success login-submit-button"}
-              />
-              </div>
-                ) : (<div></div>)}
-                </form>
-
-              {/* </Link> */}
-        </div>
+                  <input
+                    name="password"
+                    type="password"
+                    id="pwd"
+                    placeholder="Password"
+                    className={"form-control login-signup-password-field"}
+                    onChange={handleInputChange}
+                  />
+                  <FormBtn
+                    button={"Submit"}
+                    onClick={handleLogin}
+                    className={"btn btn-success login-submit-button"}
+                  />
+                </div>
+              ) : (<div></div>)}
             </form>
-        
-
+          </div>
+        </form>
       </div>
     );
   }
+}
 
 export default ListingSignup;
