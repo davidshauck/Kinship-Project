@@ -6,6 +6,8 @@
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "start:dev": "concurrently \"nodemon --ignore 'client/*' server.js\" \"npm run client\"",
     "client": "cd client && npm run start",
     "deploy": "./scripts/deploy/deploy.sh",
@@ -16,7 +18,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^1.18.7"
+    "jest": "^25.4.0",
+    "nodemon": "^1.18.7",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "dependencies": {
     "auth": "0.0.9",
