@@ -66,4 +66,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  getRandom: async (req, res) => {
+    const count = await db.Listing.count();
+    const random = Math.floor(Math.random() * count)
+    const random_listing = await db.Listing.find().skip(random);
+    res.json({
+      result: random_listing[0]
+    })
+  }
 };

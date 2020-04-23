@@ -5,6 +5,13 @@ import WenhamSeal from "../../images/wenham-seal.png"
 import { useAuth0 } from "../../react-auth0-spa";
 import "./navbar.css";
 
+export const FeatureCard = (props) => (
+  <div>
+    <h1>{props.name}</h1>
+    <h3>{props.address1}</h3>
+  </div>
+)
+
 export const Links = props => {
   const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
   if (isAuthenticated && user) {

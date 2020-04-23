@@ -11,5 +11,8 @@ export default {
   },
   getListing: function (id) {
     return axios.get("/api/listings/" + id);
+  },
+  getRandom: function () {
+    return axios.post("/api/listings/random")
   }
 };
