@@ -9,7 +9,7 @@ router.route("/")
   .post(siteController.createListing);
 
 router.route("/search").post(siteController.findAllListings)
-
+router.route("/random").post(siteController.getRandom)
 // Matches with "/api/listings/:id"
 router.route("/:id")
   .get(siteController.findListingById)
