@@ -16,6 +16,9 @@
     margin-top: 13px !important;
 }
 
+.checkbox {
+    margin: .5% 2.5%
+}
 
 .hamilton-seal {
     z-index: 100;
@@ -28,7 +31,7 @@
     opacity: 0.6;
 }
 
-.wenham-seal{
+.wenham-seal {
     z-index: 100;
     position: absolute;
     top: 20px;
@@ -45,7 +48,7 @@
     color: white;
 }
 
-.header{
+.header {
     padding-top: 35px !important;
     background-color: #28a745 !important;
     font-family: 'Gotu', sans-serif;
@@ -69,7 +72,7 @@
     margin-top: 0px;
 }
 
-.subhead{
+.subhead {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
     text-transform: capitalize !important;
     font-weight: normal;
@@ -85,7 +88,7 @@
 } */
 
 .navbar-buttons {
-    font-family:"Mark","Avenir","Helvetica","Arial",sans-serif;
+    font-family: "Mark", "Avenir", "Helvetica", "Arial", sans-serif;
     font-size: 13px;
     padding-right: 0px !important;
     margin-right: 0px !important;
@@ -105,8 +108,8 @@
 }
 
 
-.signup-button{
-    font-family:"Mark","Avenir","Helvetica","Arial",sans-serif;
+.signup-button {
+    font-family: "Mark", "Avenir", "Helvetica", "Arial", sans-serif;
     color: white;
     font-size: 13px !important;
     /* border-radius: 20px 20px 20px 20px !important;

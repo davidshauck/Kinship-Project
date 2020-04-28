@@ -6,9 +6,14 @@ import { useAuth0 } from "../../react-auth0-spa";
 import "./navbar.css";
 
 export const FeatureCard = (props) => (
-  <div>
-    <h1>{props.name}</h1>
-    <h3>{props.address1}</h3>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">{props.name}</h5>
+      <p class="card-text">{props.address1} {props.city}, {props.us_state}</p>
+      <p class="card-text">{props.phone}</p>
+      <p>{props.telephone}</p>
+      {props.categories ? props.categories.map(cateogry => <span>{cateogry} </span>) : ""}
+    </div>
   </div>
 )
 
@@ -24,9 +29,9 @@ export const Links = props => {
             </li>
           </Link>
           <li className="nav-item">
-            <div className="nav-link" href="mailto:admin@kinshipfarm.org?subject=Inquiry">Contact</div>
+            <a className="nav-link" href="mailto:admin@kinshipfarm.org?subject=Inquiry">Contact</a>
           </li>
-          <Link to="/account">
+          <Link to="/dashboard">
             <li className="nav-item">
               <div className="nav-link">My account</div>
             </li>

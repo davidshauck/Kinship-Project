@@ -8,7 +8,7 @@ import Contact from "./pages/Contact";
 import Listings from "./pages/Listings"
 import ListingSignup from "./pages/ListingSignup";
 import Login from "./pages/Login";
-import AccountDashboard from "./pages/AccountDashboard";
+import { AccountDashboard } from "./pages/AccountDashboard";
 import SearchProvider from "./SearchProvider"
 import "./style.css"
 
@@ -26,7 +26,7 @@ function App() {
             <PrivateRoute path="/new-listing" component={ListingSignup} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/contact" component={Contact} />
-            <PrivateRoute exact path="/dashboard" component={AccountDashboard} />
+            <PrivateRoute path="/dashboard" component={AccountDashboard} />
           </Switch>
           <Footer />
         </div>

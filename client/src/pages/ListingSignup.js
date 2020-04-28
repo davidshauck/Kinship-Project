@@ -140,8 +140,9 @@ const ListingForm = (props) => {
               <h4 style={{ color: "black" }}>Categories (check all that apply)</h4>
               {options.map((item, index) => (
                 <>
-                  <label className="form-check-label">
-                    <Field type="checkbox" name="categories" value={item} />
+                  <label className="form-check-label checkbox">
+                    <Field key={index}
+                      type="checkbox" name="categories" value={item} />
                     {item}
                   </label>
                 </>
