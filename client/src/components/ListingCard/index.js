@@ -13,7 +13,7 @@ function ListingCard(props) {
           <img src={props.image} alt="..." className="img-thumbnail"></img>
           </div>
           <div className="col-7 text">
-              <div className="title">{props.name}</div>
+              <div className="listing-title">{props.name}</div>
               <div className="address">{props.address1}</div>
               {props.address2 ? (<div className="address">{props.address2}</div>) : (<div></div>)}
               <div className="city">{props.city}, {props.state} {props.zip}</div>
