@@ -49,7 +49,7 @@ const ListingForm = (props) => {
         }}
         validationSchema={ListingSchema}
         onSubmit={(values, { setSubmitting }) => {
-          API.createListing(values).then(() => {
+          API.saveListing(values).then(() => {
             return <Redirect to="listings" />
           })
         }}

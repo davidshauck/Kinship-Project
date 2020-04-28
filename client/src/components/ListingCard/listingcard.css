@@ -57,8 +57,9 @@ p {
     vertical-align: center;
 }
 
-.title {
+.listing-title {
     font-weight: bold;
     font-size: 16px;
+    color: black;
 }
 
