@@ -1,5 +1,4 @@
 .image {
-    width: 100px;
     display: inline-block;
     vertical-align: top;
     padding: 0px !important;
@@ -17,7 +16,7 @@
 
 .img-thumbnail {
     padding: 0px !important;
-    max-width: 110px;
+    max-width: 80% !important;
     text-align: left;
     border: none !important;
 }

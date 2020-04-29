@@ -9,122 +9,17 @@
     margin-top: -40px
 } */
 
-/* .footer {
+.footer {
     width: 100%;
-    height: 40px;
+    /* height: 40px; */
     position: fixed;
     bottom: 0px;
     padding-top: 6px;
     bottom: 0px; 
-} */
-
-/* #navbarNav {
-    text-align: right;
 }
 
-.navbar {
-    margin-bottom: 20px;
-    text-align: center !important;
-}
-
-.jumbotron {
-    width: 100%;
-    margin: 0px !important;
-}
-
-.navbar-brand {
-    letter-spacing: 5px;
-}
-
-.hamilton-seal {
-    z-index: 100;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 150px;
-    text-align: left !important;
-    display: inline-block;
-}
-
-.wenham-seal {
-    z-index: 100;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 150px;
-    text-align: left !important;
-    display: inline-block;
-}
-
-.nav-link {
-    text-transform: uppercase;
-    font-weight: bold;
+.footer-text {
+    font-size: 10px;
     color: white;
 }
 
-.header {
-    font-family:"Mark","Avenir","Helvetica","Arial",sans-serif;
-    text-transform: uppercase;
-    font-weight: bold;
-    display: inline-block;
-    color: white;
-    text-align: center !important;
-    height: 210px;
-    padding-top: 20px;
-    font-size: 42px;
-    border-top: 3px solid orange;
-    border-bottom: 3px solid orange;
-    line-height: 10px;
-}
-
-.subhead {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
-    text-transform: capitalize !important;
-    font-weight: normal;
-    line-height: 10px;
-    font-size: 18px !important;
-    color: white;
-    text-align: center !important;
-    display: block;
-}
-
-.nav-item {
-    text-align: center;
-}
-
-.navbar-buttons {
-    font-family:"Mark","Avenir","Helvetica","Arial",sans-serif;
-    font-size: 13px;
-    padding-right: 0px !important;
-    margin-right: 0px !important;
-    white-space: nowrap;
-    color: white !important;
-    text-align: center !important;
-}
-
-.navbar-nav.navbar-center {
-    position: absolute;
-    left: 50%;
-    transform: translatex(-50%);
-    color: white !important;
-    text-align: center !important;
-}
-
-
-.signup-button {
-    font-family:"Mark","Avenir","Helvetica","Arial",sans-serif;
-    color: white;
-    font-size: 13px !important;
-    border-radius: 20px 20px 20px 20px !important;
-    padding: 5px 15px 5px 15px !important;
-}
-
-li {
-    margin: 0 5px 0 5px;
-    text-align: center !important;
-}
-
-ul {
-    text-decoration: none;
-    text-align: center !important;
-} */

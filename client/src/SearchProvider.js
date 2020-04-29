@@ -2,6 +2,7 @@
 import React, { Component } from 'react'
 import API from "./utils/API";
 import {withRouter} from "react-router-dom";
+import "./style.css";
 
 // Set Up The Initial Context
 const SearchContext = React.createContext()
@@ -20,7 +21,7 @@ class SearchProvider extends Component {
         categories: ["Dining", "Essentials", "Take-Out", "Delivery", "Retail", "Services"],
         listings: [],
         error: true,
-        button: "Submit",
+        button: "Go",
         className: "btn btn-success search-button",
         handleInputChange: (event) => {
         this.setState({ ...this.state, search: event.target.value });
