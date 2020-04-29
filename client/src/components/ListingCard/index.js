@@ -2,7 +2,6 @@ import React from "react";
 import Facebook from "../../images/facebook-logo.png";
 import Twitter from "../../images/twitter-logo.png";
 import Instagram from "../../images/instagram-logo.png";
-import Map from "../map.js"
 import "./listingcard.css"
 
 function ListingCard(props) {
