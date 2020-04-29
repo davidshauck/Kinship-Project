@@ -19,8 +19,11 @@ const HomeCard = () => {
     <div>
       <div className="fill"><img alt="..." src={TownHall} /></div>
       <div className="display-text">
-        <h5 className="search-text">Support local businesses</h5>
-        <SearchForm />
+        <h5 className="search-text">Support your local businesses</h5>
+        <SearchForm 
+        style="height: 200px"
+        />
+        <div className="search-text">Own a business? <a href="/new-listing/">Add your listing</a></div>
       </div>
       <div className="below-image">
         <h1 className="lower-title">Virtual Hamilton-Wenham</h1>

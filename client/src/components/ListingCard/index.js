@@ -18,11 +18,11 @@ function ListingCard(props) {
               {props.address2 ? (<div className="address">{props.address2}</div>) : (<div></div>)}
               <div className="city">{props.city}, {props.state} {props.zip}</div>
               <div className="telephone">{props.telephone}</div> 
-              <div className="website">{props.website}</div> 
+              <div className="website"><a href={props.website} target="_blank" rel="noopener noreferrer">{props.website}</a></div> 
               <div className="description">{props.description}</div> 
-              {props.twitter ? (<div className="twitter" style={{display: "inline-block"}}><a href={props.twitter} target="_blank" rel="noopener noreferrer" ><img src={Twitter} style={{width: "30px", margin: "5px" }} /></a></div>) : (<div></div>)}
-              {props.facebook ? (<div className="facebook" style={{display: "inline-block"}} ><a href={props.facebook} target="_blank" rel="noopener noreferrer" ><img src={Facebook} style={{width: "30px", margin: "5px" }} /></a></div>) : (<div></div>)}
-              {props.instagram ? (<div className="instagram" style={{display: "inline-block"}}><a href={props.instagram} target="_blank" rel="noopener noreferrer" ><img src={Instagram} style={{width: "30px", margin: "5px" }} /></a></div>) : (<div></div>)}
+              {props.twitter ? (<div className="twitter" style={{display: "inline-block"}}><a href={props.twitter} target="_blank" rel="noopener noreferrer"><img src={Twitter} style={{width: "30px", margin: "5px" }} /></a></div>) : (<div></div>)}
+              {props.facebook ? (<div className="facebook" style={{display: "inline-block"}} ><a href={props.facebook} target="_blank" rel="noopener noreferrer"><img src={Facebook} style={{width: "30px", margin: "5px" }} /></a></div>) : (<div></div>)}
+              {props.instagram ? (<div className="instagram" style={{display: "inline-block"}}><a href={props.instagram} target="_blank" rel="noopener noreferrer"><img src={Instagram} style={{width: "30px", margin: "5px" }} /></a></div>) : (<div></div>)}
               </div>
       </div>
       <hr />

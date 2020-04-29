@@ -1,6 +1,4 @@
 .navbar {
-    /* margin-bottom: 20px; */
-    /* height: 40px; */
     text-align: center !important;
     padding: 0px;
     height: 40px;
@@ -20,7 +18,7 @@
     color: white;
 }
 
-.hamilton_seal {
+.hamilton-seal {
     z-index: 100;
     position: absolute;
     top: 20px;
@@ -48,30 +46,14 @@
     color: white;
 }
 
-.header{
-    padding-top: 35px !important;
-    background-color: #28a745 !important;
-    font-family: 'Gotu', sans-serif;
-    /* text-transform: uppercase; */
-    font-weight: bold;
-    display: inline-block;
-    color: white;
-    height: 155px;
-    /* border-top: 3px solid orange;
-    border-bottom: 3px solid orange; */
-    line-height: 10px;
-    /* border-bottom: 30px solid #343a40; */
-}
-
 .title {
     font-family: 'Anton', sans-serif;
     letter-spacing: 2px;
     font-size: 60px;
     text-align: center;
-    /* text-transform: uppercase; */
     margin-top: 0px;
     color: white;
-    text-deocration: none;
+    text-decoration: none;
 }
 
 .title:hover, title:link {
@@ -94,10 +76,6 @@ a:hover, a:link {
     text-decoration:none;
 }
 
-/* .nav-item {
-    text-align: center;
-} */
-
 .navbar-buttons {
     font-family:"Mark","Avenir","Helvetica","Arial",sans-serif;
     font-size: 13px;
@@ -109,7 +87,7 @@ a:hover, a:link {
 }
 
 .navbar-nav.navbar-center {
-    position: absolute;
+    /* position: absolute; */
     left: 50%;
     transform: translate(-50%, 10px);
     color: white !important;
@@ -123,8 +101,6 @@ a:hover, a:link {
     font-family:"Mark","Avenir","Helvetica","Arial",sans-serif;
     color: white;
     font-size: 13px !important;
-    /* border-radius: 20px 20px 20px 20px !important;
-    padding: 5px 15px 5px 15px !important; */
 }
 
 li {
@@ -136,3 +112,27 @@ ul {
     text-decoration: none;
     text-align: center !important;
 }
+
+@media screen and (max-width: 1144px) {
+    .title, title:hover {
+      font-size: 48px !important;
+    }
+    .hamilton-seal, .wenham-seal {
+        width: 80px;
+    }
+  }
+
+  @media screen and (max-width: 958px) {
+    .title, title:hover {
+      white-space: nowrap;
+    }
+    .hamilton-seal, .wenham-seal {
+        display: none;
+    }
+  }
+
+  @media screen and (max-width: 690px) {
+    .title, title:hover {
+      font-size: 36px;
+    }
+  }

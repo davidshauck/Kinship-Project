@@ -32,7 +32,7 @@ const listingSchema = new Schema({
     required: true
   },
   zip_code: {
-    type: Number,
+    type: String,
     required: true
   },
   telephone: {

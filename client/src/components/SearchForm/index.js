@@ -19,7 +19,7 @@ function SearchForm() {
             name="category"
             list="categories"
             type="text"
-            className={"form-control jumbotron-input-field"}
+            className={"search-bar"}
             placeholder="Find info for...."
             id="category"
           />

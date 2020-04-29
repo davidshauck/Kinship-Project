@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import HamiltonSeal from "../../images/hamilton-seal.png"
 import WenhamSeal from "../../images/wenham-seal.png"
 import { useAuth0 } from "../../react-auth0-spa";
+import SearchForm from "../SearchForm";
 import "./navbar.css";
 
 export const FeatureCard = (props) => (
@@ -33,7 +34,7 @@ export const Links = props => {
           </li>
           <Link to="/dashboard">
             <li className="nav-item">
-              <div className="nav-link">My account</div>
+              <div className="nav-link">My listing</div>
             </li>
           </Link>
           <Link push to="/">
@@ -41,6 +42,7 @@ export const Links = props => {
               <div className="nav-link" href="/" onClick={() => logout()}>Logout</div>
             </li>
           </Link>
+          <SearchForm />
         </ul>
       </div>
     );
@@ -48,11 +50,11 @@ export const Links = props => {
     return (
       <div className="navbar-buttons">
         <ul className="navbar-nav navbar-center">
-          <Link to="/">
+          {/* <Link to="/">
             <li className="nav-item">
               <div className="nav-link">Help For Businesses</div>
             </li>
-          </Link>
+          </Link> */}
           <Link push to="/new-listing">
             <li className="nav-item">
               <div className="nav-link">Add your listing</div>
@@ -66,6 +68,7 @@ export const Links = props => {
               <div className="nav-link" onClick={() => loginWithRedirect({})}>Login</div>
             </li>
           </Link>
+          <SearchForm />
         </ul>
       </div>
     )

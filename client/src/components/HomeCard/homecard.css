@@ -5,13 +5,13 @@ h2 {
     text-align: left;
   }
 
-.subhead {
+/* .subhead {
     font-size: 13px;
     margin-bottom: 30px;
     text-align: left;
     line-height: 24px;
     display: inline-block;
-}
+} */
 
 .large-image {
   object-fit: cover;
