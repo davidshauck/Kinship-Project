@@ -9,6 +9,11 @@ export default {
       data: query
     });
   },
+  getListingByUser: (user) => {
+    return axios.post("/api/user/listings", {
+      email: user.email
+    })
+  },
   getListing: function (id) {
     return axios.get("/api/listings/" + id);
   },

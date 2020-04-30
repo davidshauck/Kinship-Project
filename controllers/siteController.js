@@ -73,5 +73,13 @@ module.exports = {
     res.json({
       result: random_listing[0]
     })
+  },
+  getListingsByUser: async (req, res) => {
+    const listings = await db.Listing.find({
+      email: req.body.email
+    }).catch(err => res.json(err))
+    res.json({
+      listings
+    })
   }
 };
