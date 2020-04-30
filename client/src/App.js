@@ -4,7 +4,6 @@ import Home from "./pages/Home";
 import { NavJumbo } from "./components/Decorators";
 import { PrivateRoute } from "./components/AuthService";
 import Footer from "./components/Footer";
-import Contact from "./pages/Contact";
 import Listings from "./pages/Listings"
 import ListingSignup from "./pages/ListingSignup";
 import Login from "./pages/Login";
@@ -25,7 +24,6 @@ function App() {
             <Route exact path="/listings" component={Listings} />
             <PrivateRoute path="/new-listing" component={ListingSignup} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/contact" component={Contact} />
             <PrivateRoute path="/dashboard" component={AccountDashboard} />
           </Switch>
           <Footer />
