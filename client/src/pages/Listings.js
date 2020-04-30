@@ -8,18 +8,17 @@ class Listings extends Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div>
         <Container fluid>
           <Row>
-            <Col size="md-2">
-            </Col>
-            <Col size="md-8">
+            {/* <Col size="md-1">
+            </Col> */}
+            <Col size="md-12">
               <SearchConsumer className="content-inside">
                 {context => (
                   <React.Fragment>
                     {context.state.listings.length ? (
                       <List>
-                        <h2>AVAILABLE TUTORS</h2>
                         {context.state.listings.map(listing => (
                           <ListItem key={listing._id}>
                             <ListingCard
@@ -27,8 +26,8 @@ class Listings extends Component {
                               address1={listing.address1}
                               address2={listing.address2}
                               city={listing.city}
-                              state={listing.us_state}
-                              zip={listing.zip_code}
+                              us_state={listing.us_state}
+                              zip_code={listing.zip_code}
                               telephone={listing.telephone}
                               website={listing.website}
                               image={listing.image}
@@ -50,8 +49,8 @@ class Listings extends Component {
                 )}
               </SearchConsumer>
             </Col>
-            <Col size="md-2">
-            </Col>
+            {/* <Col size="md-1">
+            </Col> */}
           </Row>
         </Container>
         <div className="push"></div>
