@@ -42,7 +42,6 @@ export const Links = props => {
               <div className="nav-link" href="/" onClick={() => logout()}>Logout</div>
             </li>
           </Link>
-          <SearchForm />
         </ul>
       </div>
     );
@@ -68,7 +67,6 @@ export const Links = props => {
               <div className="nav-link" onClick={() => loginWithRedirect({})}>Login</div>
             </li>
           </Link>
-          <SearchForm />
         </ul>
       </div>
     )
