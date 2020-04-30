@@ -33,8 +33,11 @@ module.exports = {
     console.log(req.body)
     db.Listing
       .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+      .then(dbModel => res.json({
+        success: true,
+        ...dbModel
+      }))
+      .catch(err => res.json(err));
   },
   updateStudent: function (req, res) {
     db.Listing
@@ -67,7 +70,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   getRandom: async (req, res) => {
-    const count = await db.Listing.count();
+    const count = await db.Listing.countDocuments();
     const random = Math.floor(Math.random() * count)
     const random_listing = await db.Listing.find().skip(random);
     res.json({
