@@ -8,44 +8,11 @@ render() {
 return (
   <div> 
 
-  <nav className="footer navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-dark bg-dark">
-    
-
+  <nav className="footer navbar-dark bg-dark">
     <div className="navbar-buttons">
-    <ul className="navbar-nav navbar-center bg-dark">
-    {/* <Link to="/">
-    <li className="nav-item">
-      <div className="nav-link">Shop Groceries</div>
-    </li>
-    </Link>
-    <Link to="/">
-      <li className="nav-item">
-        <div className="nav-link">Dine In</div>
-      </li>
-    </Link>
-    <Link to="/">
-      <li className="nav-item">
-        <div className="nav-link">Shop Retail</div>
-      </li>
-    </Link>
-    <Link to="/">
-      <li className="nav-item">
-        <div className="nav-link">Essential Services</div>
-      </li>
-    </Link>
-    <Link to="/">
-      <li className="nav-item">
-        <div className="nav-link">Help For Businesses</div>
-      </li>
-    </Link> */}
-    {/* <Link to="/">
-    <li className="nav-item">
-      <div className="nav-link">Contact</div>
-    </li>
-    </Link> */}
-    </ul>
-    Copyright © 2020 Kinship Farm
-  </div>
+      <div>Copyright © 2020 Kinship Farm</div>
+      <div><a className="footer-text" href="mailto:info@brixyfy.com?subject=Report a bug">Report a bug</a></div>
+    </div>
   </nav >  
     </div>
     )

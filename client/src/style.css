@@ -7,14 +7,26 @@
     margin-bottom: 20px;
 }
 
+.search-button {
+    border-radius: 0 3px 3px 0 !important;
+    height: 23px !important;
+    vertical-align: center;
+}
+
+.btn, .btn-success {
+    vertical-align: middle !important;
+    padding: 0 10px 0 10px !important;
+    font-size: 13px !important;
+}
+
 .jumbotron {
     width: 100%;
     margin: 0px !important;
 }
 
-.row {
+/* .row {
     margin-top: 13px !important;
-}
+} */
 
 .checkbox {
     margin: .5% 2.5%
@@ -52,25 +64,21 @@
     padding-top: 35px !important;
     background-color: #28a745 !important;
     font-family: 'Gotu', sans-serif;
-    /* text-transform: uppercase; */
     font-weight: bold;
     display: inline-block;
     color: white;
     height: 155px;
-    /* border-top: 3px solid orange;
-    border-bottom: 3px solid orange; */
     line-height: 10px;
-    /* border-bottom: 30px solid #343a40; */
 }
 
-.title {
+/* .title {
     font-family: 'Anton', sans-serif;
     letter-spacing: 2px;
     font-size: 60px;
     text-align: center;
-    /* text-transform: uppercase; */
+    text-transform: uppercase;
     margin-top: 0px;
-}
+} */
 
 .subhead {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
@@ -83,9 +91,6 @@
     display: block;
 }
 
-/* .nav-item {
-    text-align: center;
-} */
 
 .navbar-buttons {
     font-family: "Mark", "Avenir", "Helvetica", "Arial", sans-serif;
@@ -107,15 +112,6 @@
     height: 200px;
 }
 
-
-.signup-button {
-    font-family: "Mark", "Avenir", "Helvetica", "Arial", sans-serif;
-    color: white;
-    font-size: 13px !important;
-    /* border-radius: 20px 20px 20px 20px !important;
-    padding: 5px 15px 5px 15px !important; */
-}
-
 li {
     margin: 0 5px 0 5px;
     text-align: center !important;
@@ -125,3 +121,9 @@ ul {
     text-decoration: none;
     text-align: center !important;
 }
+
+@media screen and (max-width: 1144px) {
+    .title, title:hover {
+      font-size: 48px !important;
+    }
+  }
