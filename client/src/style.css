@@ -7,13 +7,18 @@
     margin-bottom: 20px;
 }
 
+.footer-spacer {
+    margin-bottom: 4%;
+}
+
 .search-button {
     border-radius: 0 3px 3px 0 !important;
     height: 23px !important;
     vertical-align: center;
 }
 
-.btn, .btn-success {
+.btn,
+.btn-success {
     vertical-align: middle !important;
     padding: 0 10px 0 10px !important;
     font-size: 13px !important;
@@ -123,7 +128,9 @@ ul {
 }
 
 @media screen and (max-width: 1144px) {
-    .title, title:hover {
-      font-size: 48px !important;
+
+    .title,
+    title:hover {
+        font-size: 48px !important;
     }
-  }
+}
