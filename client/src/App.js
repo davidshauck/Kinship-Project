@@ -8,11 +8,19 @@ import Listings from "./pages/Listings"
 import ListingSignup from "./pages/ListingSignup";
 import { AccountDashboard } from "./pages/AccountDashboard";
 import SearchProvider from "./SearchProvider"
+import { useAuth0 } from "./react-auth0-spa";
+import { Loading } from "./components/Decorators/loading";
 import "./style.css"
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const { loading } = useAuth0();
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <Router>
       <SearchProvider>

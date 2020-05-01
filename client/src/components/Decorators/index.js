@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import HamiltonSeal from "../../images/hamilton-seal.png"
 import WenhamSeal from "../../images/wenham-seal.png"
 import { useAuth0 } from "../../react-auth0-spa";
-import SearchForm from "../SearchForm";
-import { Map } from "../Map/index";
 import "./navbar.css";
 
 export const FeatureCard = (props) => (
@@ -15,7 +13,6 @@ export const FeatureCard = (props) => (
       <p class="card-text">{props.phone}</p>
       <p>{props.telephone}</p>
       {props.categories ? props.categories.map(cateogry => <span>{cateogry} </span>) : ""}
-
     </div>
   </div>
 )
