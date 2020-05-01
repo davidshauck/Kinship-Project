@@ -3,22 +3,27 @@ import { Link } from "react-router-dom";
 import HamiltonSeal from "../../images/hamilton-seal.png"
 import WenhamSeal from "../../images/wenham-seal.png"
 import { useAuth0 } from "../../react-auth0-spa";
+import { Loading } from "../Decorators/loading";
+
 import "./navbar.css";
 
 export const FeatureCard = (props) => (
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">{props.name}</h5>
-      <p class="card-text">{props.address1} {props.city}, {props.us_state}</p>
-      <p class="card-text">{props.phone}</p>
+  <div className="card">
+    <div className="card-body" onClick={props.onClick}>
+      <h5 className="card-title">{props.name}</h5>
+      <p className="card-text">{props.address1} {props.city}, {props.us_state}</p>
+      <p className="card-text">{props.phone}</p>
       <p>{props.telephone}</p>
-      {props.categories ? props.categories.map(cateogry => <span>{cateogry} </span>) : ""}
+      {props.categories ? props.categories.map((cateogry, index) => <span key={index}>{cateogry}</span>) : ""}
     </div>
   </div>
 )
 
 export const Links = props => {
-  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout, user, loading } = useAuth0();
+  if (loading) {
+    return <Loading />
+  }
   if (isAuthenticated && user) {
     return (
       <div className="navbar-buttons">

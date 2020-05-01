@@ -21,7 +21,7 @@ const ListingSchema = Yup.object().shape({
     , { message: "That is not a valid URL" })
 });
 
-const ListingForm = (props) => {
+export const ListingForm = (props) => {
   const { user } = useAuth0();
   const [redirect, setRedirect] = useState(false)
   const options = ["Dining", "Essentials", "Take-Out", "Delivery", "Retail", "Services"]
@@ -31,7 +31,7 @@ const ListingForm = (props) => {
       <div className="container">
         <h4 style={{ color: "black" }}>Create your business profile</h4>
         <Formik
-          initialValues={{
+          initialValues={props ? props.chosen : {
             user: user.name,
             email: user.email,
             name: "",
