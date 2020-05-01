@@ -6,7 +6,6 @@ import { PrivateRoute } from "./components/AuthService";
 import Footer from "./components/Footer";
 import Listings from "./pages/Listings"
 import ListingSignup from "./pages/ListingSignup";
-import Login from "./pages/Login";
 import { AccountDashboard } from "./pages/AccountDashboard";
 import SearchProvider from "./SearchProvider"
 import "./style.css"
@@ -23,7 +22,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/listings" component={Listings} />
             <PrivateRoute path="/new-listing" component={ListingSignup} />
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/login" />
             <PrivateRoute path="/dashboard" component={AccountDashboard} />
           </Switch>
           <Footer />

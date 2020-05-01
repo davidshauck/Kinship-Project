@@ -52,7 +52,6 @@ const ListingForm = (props) => {
           }}
           validationSchema={ListingSchema}
           onSubmit={(values, { setSubmitting }) => {
-            alert(JSON.stringify(values))
             API.saveListing(values).then((res) => {
               setRedirect(true)
             }).catch(err => {
