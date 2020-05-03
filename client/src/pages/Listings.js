@@ -27,6 +27,7 @@ const Listings = () => {
                             us_state={listing.us_state}
                             zip_code={listing.zip_code}
                             telephone={listing.telephone}
+                            email={listing.email}
                             website={listing.website}
                             image={listing.image}
                             categories={listing.categories}
