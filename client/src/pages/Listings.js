@@ -2,7 +2,8 @@ import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import ListingCard from "../components/ListingCard";
-import { SearchConsumer } from '../SearchProvider'
+import { SearchConsumer } from '../SearchProvider';
+import SearchBar from "../components/SearchBar";
 import "./style.css";
 
 
@@ -11,6 +12,7 @@ const Listings = () => {
     <div>
       <Container fluid>
         <Row>
+        <SearchBar/>
           <Col size="md-12">
             <SearchConsumer className="content-inside">
               {context => (
