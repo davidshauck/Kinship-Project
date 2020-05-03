@@ -16,7 +16,8 @@ function ListingCard(props) {
           <div className="text">{props.address1}</div>
           {props.address2 ? (<div className="address">{props.address2}</div>) : (<div></div>)}
           <div className="text">{props.city}, {props.us_state} {props.zip_code} </div>
-          <p>{props.telephone}</p>
+          <div>{props.telephone}</div>
+          <div><a className="text" href={"mailto:"+props.email+"?subject=Info"}>{props.email}</a></div>
           <div className="text"><a href={props.website} target="_blank" rel="noopener noreferrer">{props.website}</a></div>
         </div>
         <div className="col-6 text">
