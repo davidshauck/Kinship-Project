@@ -28,7 +28,7 @@ const ListingForm = (props) => {
 
   if (!redirect) {
     return (
-      <div className="container">
+      <div className="signup-container">
         <h4 style={{ color: "black" }}>Create your business profile</h4>
         <Formik
           initialValues={{
@@ -68,14 +68,14 @@ const ListingForm = (props) => {
                 <Field
                   name="name"
                   type="text"
-                  placeholder="Business Name (required)"
+                  placeholder="Business Name*"
                   className="col-11 signup-boxes"
                 />
                 <Field
                   name="address1"
                   type="text"
                   className="col-11 signup-boxes"
-                  placeholder="Address (required)"
+                  placeholder="Address*"
                 />
                 {errors.address1 ? <p>{errors.address1}</p> : null}
                 <Field
@@ -88,19 +88,19 @@ const ListingForm = (props) => {
                   name="city"
                   type="text"
                   className="col-5 signup-boxes"
-                  placeholder="City"
+                  placeholder="City*"
                 />
                 <Field
                   name="us_state"
                   type="text"
                   className="col-2 signup-boxes"
-                  placeholder="State"
+                  placeholder="State*"
                 />
                 <Field
                   name="zip_code"
                   type="text"
                   className="col-4 signup-boxes"
-                  placeholder="Zip"
+                  placeholder="Zip*"
                 />
                 {errors.zip_code ? <p>{errors.zip_code}</p> : null}
                 <Field
@@ -114,7 +114,7 @@ const ListingForm = (props) => {
                   name="image"
                   type="text"
                   className="col-11 signup-boxes"
-                  placeholder="Photo (paste in url)"
+                  placeholder="Logo or image (paste in url)"
                 />
                 <Field
                   name="website"
@@ -126,19 +126,19 @@ const ListingForm = (props) => {
                   name="twitter"
                   type="text"
                   className="col-4 signup-boxes"
-                  placeholder="Twitter (full URL)"
+                  placeholder="http://twitter.com/your-twitter"
                 />
                 <Field
                   name="facebook"
                   type="text"
                   className="col-3 signup-boxes"
-                  placeholder="Facebook (full URL)"
+                  placeholder="http://facebook.com/your-facebook"
                 />
                 <Field
                   name="instagram"
                   type="text"
                   className="col-4 signup-boxes"
-                  placeholder="Instagram (full URL)"
+                  placeholder="http://instagram.com/your-instagram"
                 />
                 <h4 style={{ color: "black" }}>Categories (check all that apply)</h4>
                 {options.map((item, index) => (
@@ -150,7 +150,7 @@ const ListingForm = (props) => {
                     </label>
                   </>
                 ))}
-                <div className="col-12">
+                <div className="col-12" style={{ marginBottom: "50px"}}>
                   <h4 style={{ color: "black" }}>Additional details</h4>
                   {errors ? <p>{JSON.stringify(errors.zip_code)}</p> : null}
                   <textarea className="form-control" rows="10" name="description" onChange={handleChange} placeholder="Message to your customers, store hours, etc." />

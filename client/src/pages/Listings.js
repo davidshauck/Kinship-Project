@@ -11,8 +11,6 @@ const Listings = () => {
     <div>
       <Container fluid>
         <Row>
-          {/* <Col size="md-1">
-            </Col> */}
           <Col size="md-12">
             <SearchConsumer className="content-inside">
               {context => (
@@ -49,8 +47,6 @@ const Listings = () => {
               )}
             </SearchConsumer>
           </Col>
-          {/* <Col size="md-1">
-            </Col> */}
         </Row>
       </Container>
       <div className="push"></div>

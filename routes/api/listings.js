@@ -15,6 +15,9 @@ router.route("/:id")
   .get(siteController.findListingById)
   .delete(siteController.removeListing);
 
+// pulls up the cities from the selected US State
+router.route("/cities").post(siteController.getCities)
+
 // Any route with isAuthenticated is protected and you need a valid token
 // to access
 router.route("account/:id").get(isAuthenticated, (req, res) => {
