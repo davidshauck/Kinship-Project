@@ -5,9 +5,8 @@ import "./style.css";
 
 const Home = () => {
   return (
-    <div className="wrapper">
+    <div>
       <HomeCard />
-      <div className="push"></div>
     </div>
   );
 }

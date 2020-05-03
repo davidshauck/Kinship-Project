@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import HamiltonSeal from "../../images/hamilton-seal.png"
 import WenhamSeal from "../../images/wenham-seal.png"
 import { useAuth0 } from "../../react-auth0-spa";
+import SearchForm from "../SearchForm"
 import "./navbar.css";
 
 export const FeatureCard = (props) => (
@@ -77,9 +78,11 @@ export const NavJumbo = props => (
         <p className="subhead">Serving Community – Providing Peace-of-Mind</p>
       </Link>
     </div>
-    <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm bg-dark">
-      <Links />
-    </nav>
+    <div className="nav-decoration">
+      <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm bg-dark nav-decoration">
+        <Links />
+      </nav>
+    </div>
   </div>
 )
 
