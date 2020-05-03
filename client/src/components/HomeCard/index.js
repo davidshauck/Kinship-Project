@@ -3,6 +3,7 @@ import SearchForm from "../../components/SearchForm"
 import TownHall from "../../images/hamilton-background3.jpg"
 import API from "../../utils/API";
 import { FeatureCard } from "../Decorators"
+import LocaleDropdown from '../LocaleDropdown'
 import "./homecard.css";
 
 const HomeCard = () => {
@@ -19,9 +20,10 @@ const HomeCard = () => {
     <div>
       <div className="fill"><img alt="..." src={TownHall} /></div>
       <div className="display-text">
-        <h5 className="search-text">Support your local businesses</h5>
+      <h5 className="search-text">Support your local businesses</h5>
+      <LocaleDropdown/>
         <SearchForm 
-        style="height: 200px"
+        style={{height: "200px"}}
         />
         <div className="search-text">Own a business? <a href="/new-listing/">Add your listing</a></div>
       </div>
@@ -34,6 +36,5 @@ const HomeCard = () => {
     </div>
   );
 }
-
 
 export default HomeCard;

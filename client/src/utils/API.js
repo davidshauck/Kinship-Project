@@ -9,6 +9,11 @@ export default {
       data: query
     });
   },
+  getCities: function (query) {
+    return axios.post("/api/listings/cities", {
+      data: query
+    });
+  },
   getListingByUser: (user) => {
     return axios.post("/api/user/listings", {
       email: user.email

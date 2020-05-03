@@ -6,11 +6,11 @@ import { useAuth0 } from "../../react-auth0-spa";
 import "./navbar.css";
 
 export const FeatureCard = (props) => (
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">{props.name}</h5>
-      <p class="card-text">{props.address1} {props.city}, {props.us_state}</p>
-      <p class="card-text">{props.phone}</p>
+  <div className="card">
+    <div className="card-body">
+      <h5 className="card-title">{props.name}</h5>
+      <p className="card-text">{props.address1} {props.city}, {props.us_state}</p>
+      <p className="card-text">{props.phone}</p>
       <p>{props.telephone}</p>
       {props.categories ? props.categories.map(cateogry => <span>{cateogry} </span>) : ""}
     </div>
@@ -48,11 +48,6 @@ export const Links = props => {
     return (
       <div className="navbar-buttons">
         <ul className="navbar-nav navbar-center">
-          {/* <Link to="/">
-            <li className="nav-item">
-              <div className="nav-link">Help For Businesses</div>
-            </li>
-          </Link> */}
           <Link push to="/new-listing">
             <li className="nav-item">
               <div className="nav-link">Add your listing</div>
