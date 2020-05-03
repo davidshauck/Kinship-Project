@@ -90,12 +90,6 @@ const ListingForm = (props) => {
                   className="col-5 signup-boxes"
                   placeholder="City*"
                 />
-                {/* <Field
-                  name="us_state"
-                  type="text"
-                  className="col-2 signup-boxes"
-                  placeholder="State*"
-                /> */}
                 <Field as="select" name="us_state" className="signup-boxes">
                     <option value="Alabama">Alabama</option>
                     <option value="Alaska">Alaska</option>
