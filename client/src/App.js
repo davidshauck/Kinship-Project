@@ -29,7 +29,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/listings" component={Listings} />
-            <PrivateRoute path="/new-listing" component={ListingSignup} />
+            <Route path="/new-listing" component={ListingSignup} />
             <Route exact path="/login" />
             <PrivateRoute path="/dashboard" component={AccountDashboard} />
           </Switch>
