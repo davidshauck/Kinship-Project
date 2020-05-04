@@ -24,24 +24,26 @@ export const Links = props => {
   if (isAuthenticated && user) {
     return (
       <div className="navbar-buttons">
-        <Link to="/" style={{ textDecoration: 'none', color: "white" }}>
-          Local Lifeline
-        </Link>
+        <div className="lifeline-text">
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            Local Lifeline
+          </Link>
+        </div>
         <ul className="navbar-nav navbar-center">
           <Link push to="/new-listing">
             <li className="nav-item">
-              <div className="nav-link">Add your listing</div>
+              <div className="nav-link">Add a listing</div>
             </li>
           </Link>
           <li className="nav-item">
             <a className="nav-link" href="mailto:admin@kinshipfarm.org?subject=Inquiry">Contact</a>
           </li>
           <li>
-            <a className="footer-text" href="mailto:info@brixyfy.com?subject=Report a bug">Report a bug</a>
+            <a className="nav-link" href="mailto:info@brixyfy.com?subject=Report a bug">Report a bug</a>
           </li>
           <Link to="/dashboard">
             <li className="nav-item">
-              <div className="nav-link">My listing</div>
+              <div className="nav-link">My listings</div>
             </li>
           </Link>
           <Link push to="/">

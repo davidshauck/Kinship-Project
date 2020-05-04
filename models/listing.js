@@ -61,6 +61,48 @@ const listingSchema = new Schema({
   instagram: {
     type: String
   },
+  MondayOpen: {
+    type: String
+  },
+  TuesdayOpen: {
+    type: String
+  },
+  WednesdayOpen: {
+    type: String
+  },
+  ThursdayOpen: {
+    type: String
+  },
+  FridayOpen: {
+    type: String
+  },
+  SaturdayOpen: {
+    type: String
+  },
+  SundayOpen: {
+    type: String
+  },
+  MondayClose: {
+    type: String
+  },
+  TuesdayClose: {
+    type: String
+  },
+  WednesdayClose: {
+    type: String
+  },
+  ThursdayClose: {
+    type: String
+  },
+  FridayClose: {
+    type: String
+  },
+  SaturdayClose: {
+    type: String
+  },
+  SundayClose: {
+    type: String
+  },
 });
 
 const Listing = mongoose.model("Listing", listingSchema);
