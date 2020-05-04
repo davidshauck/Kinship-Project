@@ -9,10 +9,11 @@ import "./navbar.css";
 export const FeatureCard = (props) => (
   <div className="card">
     <div className="card-body">
+      <img src={props.image} alt="..." className="img-thumbnail" />
       <h5 className="card-title">{props.name}</h5>
-      <p className="card-text">{props.address1} {props.city}, {props.us_state}</p>
-      <p className="card-text">{props.phone}</p>
-      <p>{props.telephone}</p>
+      <div className="card-text">{props.address1} {props.city}, {props.us_state}</div>
+      <div className="card-text">{props.phone}</div>
+      <div>{props.telephone}</div>
       {props.categories ? props.categories.map(cateogry => <span>{cateogry} </span>) : ""}
     </div>
   </div>
@@ -23,6 +24,9 @@ export const Links = props => {
   if (isAuthenticated && user) {
     return (
       <div className="navbar-buttons">
+        <Link to="/" style={{ textDecoration: 'none', color: "white" }}>
+          Local Lifeline
+        </Link>
         <ul className="navbar-nav navbar-center">
           <Link push to="/new-listing">
             <li className="nav-item">
@@ -31,6 +35,9 @@ export const Links = props => {
           </Link>
           <li className="nav-item">
             <a className="nav-link" href="mailto:admin@kinshipfarm.org?subject=Inquiry">Contact</a>
+          </li>
+          <li>
+            <a className="footer-text" href="mailto:info@brixyfy.com?subject=Report a bug">Report a bug</a>
           </li>
           <Link to="/dashboard">
             <li className="nav-item">
@@ -48,6 +55,11 @@ export const Links = props => {
   } else {
     return (
       <div className="navbar-buttons">
+        <div className="lifeline-text">
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            Local Lifeline
+          </Link>
+        </div>
         <ul className="navbar-nav navbar-center">
           <Link push to="/new-listing">
             <li className="nav-item">
@@ -56,6 +68,9 @@ export const Links = props => {
           </Link>
           <li className="nav-item">
             <a className="nav-link" href="mailto:admin@kinshipfarm.org?subject=Inquiry">Contact</a>
+          </li>
+          <li>
+            <a className="nav-link" href="mailto:info@brixyfy.com?subject=Report a bug">Report a bug</a>
           </li>
           <Link to="/login">
             <li className="nav-item">
@@ -69,21 +84,9 @@ export const Links = props => {
 }
 
 export const NavJumbo = props => (
-  <div className="jumbotron jumbotron-fluid header">
-    <div className="container">
-      <Link to="/" style={{ textDecoration: 'none' }}>
-        <img className="hamilton-seal" alt="Hamilton Seal" href="/" src={HamiltonSeal} />
-        <img className="wenham-seal" alt="Wenham Seal" href="/" src={WenhamSeal} />
-        <h1 className="title">Virtual Hamilton-Wenham</h1>
-        <p className="subhead">Serving Community – Providing Peace-of-Mind</p>
-      </Link>
-    </div>
-    <div className="nav-decoration">
-      <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm bg-dark nav-decoration">
-        <Links />
-      </nav>
-    </div>
-  </div>
+    <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm bg-none">
+      <Links />
+    </nav>
 )
 
 

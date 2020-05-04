@@ -4,7 +4,7 @@ import "./searchbar.css";
 
 const SearchBar = props => {
     return (
-      <div className="navbar bg-secondary navbar-buttons">
+      <div className="search-bar">
        <SearchForm/>
       </div>
     );

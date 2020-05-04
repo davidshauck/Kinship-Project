@@ -33,7 +33,7 @@ function App() {
             <Route exact path="/login" />
             <PrivateRoute path="/dashboard" component={AccountDashboard} />
           </Switch>
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </SearchProvider>
     </Router>
