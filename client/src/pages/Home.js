@@ -5,7 +5,7 @@ import "./style.css";
 
 const Home = () => {
   return (
-    <div>
+    <div className="img-background">
       <HomeCard />
     </div>
   );
