@@ -12,8 +12,18 @@ const Listings = () => {
     <div>
       <Container fluid>
         <Row>
-        <SearchBar/>
-          <Col size="md-12">
+        <Col size="2"></Col>
+        <Col size="8">
+
+      <SearchBar/>
+      </Col>
+      <Col size="2"></Col>
+
+      </Row>
+
+        <Row>
+        <Col size="1"></Col>
+          <Col size="10">
             <SearchConsumer className="content-inside">
               {context => (
                 <React.Fragment>
@@ -43,13 +53,14 @@ const Listings = () => {
                     </List>
                   ) : (
                       <div className="box">
-                        <h4 className="webinars-headline">Sorry, there are no listings for that search.</h4>
+                        <h4 className="no-results">Sorry, there are no listings for that search.</h4>
                       </div>
                     )}
                 </React.Fragment>
               )}
             </SearchConsumer>
           </Col>
+          <Col size="1"></Col>
         </Row>
       </Container>
       <div className="push"></div>
