@@ -5,3 +5,14 @@
 .row {
     margin-top: 13px !important;
 }
+
+.search-bar {
+    height: 40px;
+    background-color: white;
+    border: none;
+    margin-bottom: 30px;
+    margin-left: 15px;
+    margin-top: 20px;
+    width: 60%;
+    
+  }

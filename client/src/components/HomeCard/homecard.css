@@ -5,14 +5,6 @@ h2 {
     text-align: left;
   }
 
-/* .subhead {
-    font-size: 13px;
-    margin-bottom: 30px;
-    text-align: left;
-    line-height: 24px;
-    display: inline-block;
-} */
-
 .large-image {
   object-fit: cover;
   /* width: 1500px;
@@ -26,73 +18,33 @@ h2 {
   align-items: center;
   overflow: hidden
 }
+
 .fill img {
   flex-shrink: 0;
-  min-width: 100%;
-  min-height: 100%
-}
-
-h1.lower-title {
-  Font-family: "Mark","Avenir","Helvetica","Arial",sans-serif;
-  font-size: 40px;
-  text-align: center;
-
-}
-
-.lower-subhead {
-  Font-family: "Mark","Avenir","Helvetica","Arial",sans-serif;
-  font-size: 20px;
-  line-height: 25px;
-  text-align: center;
-}
-
-.below-image {
-  padding: 50px 120px 50px 120px;
-  text-align: center;
+  min-width: 50%;
+  /* min-height: 100% */
 }
 
 .display-text {
   position: absolute;
   left: 50%;
-  width: 500px;
-  /* text-align: center; */
-   padding: 20px;
+  width: 65%;
+  padding: 30px;
   transform: translatex(-50%);
-  background-color: rgba(248, 245, 245, 0.7) !important;
-  /* opacity: .7; */
-  /* background-color: black; */
-  /* width: 200px;
-  height: 200px;
-  color: white; */
-  /* left: 50%; */
   text-align: center;
-  top: 50%;
+  top: 12%;
   border-radius: 6px;
 }
 
 .search-text {
   color: black;
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-family: "Mark", "Avenir", "Helvetica", "Arial", sans-serif;
 }
 
 .nav-link:hover {
     text-decoration: none;
-}
-
-.main-title {
-  Font-family: "Mark","Avenir","Helvetica","Arial",sans-serif;
-  font-size: 150px;
-  text-align: right;
-  color: orange;
-  text-transform: lowercase;
-  display: inline-block;
-  margin-top: 10%;
-}
-
-.homebox {
-  /* background-color: rgba(248, 245, 245, 0.6) !important; */
-  text-align: center;
-  border-radius: 6px;
-  margin-top: 5%;
 }
 
 .main-subhead {

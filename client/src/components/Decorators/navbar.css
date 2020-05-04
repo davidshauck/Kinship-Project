@@ -1,115 +1,53 @@
 .navbar {
-    /* text-align: center !important; */
-    /* padding: 0px; */
-    /* height: 40px; */
-    /* margin-bottom: 20px; */
+    height: 40px;
+    text-align: right !important;
+    padding: 0px;
+    float: right !important;
 }
-/* 
-.jumbotron {
-    width: 100%;
-    margin: 0px !important;
-} */
 
-/* .row {
-    margin-top: 13px !important;
-} */
-
-/* nav {
-    margin-bottom: 100px;
-} */
+.card {
+    position: fixed;
+    bottom: -620px;
+    width: 15%;
+    margin-left: 20px;
+    display: inline-block !important;
+}
 
 .nav-link:hover {
     color: white;
 }
 
-.nav-decoration {
-    margin-bottom: 100px;
-}
-
-.hamilton-seal {
-    z-index: 100;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 110px;
-    text-align: left !important;
-    display: inline-block;
-    opacity: 0.6;
-}
-
-.wenham-seal{
-    z-index: 100;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 110px;
-    text-align: left !important;
-    display: inline-block;
-    opacity: 0.6;
-}
-
 .nav-link {
     text-transform: uppercase;
     font-weight: bold;
-    color: white;
-    /* padding-bottom: 200px !important; */
-}
-
-.title {
-    font-family: 'Anton', sans-serif;
-    letter-spacing: 2px;
-    font-size: 60px;
-    text-align: center;
-    margin-top: 0px;
-    color: white;
-    text-decoration: none;
-}
-
-.title:hover, title:link {
-    color:white;
-    text-decoration: none;
-}
-
-.subhead{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif !important;
-    /* text-transform: capitalize !important; */
-    font-weight: normal;
-    line-height: 10px;
-    font-size: 18px !important;
-    color: white;
-    text-align: center !important;
-    display: block;
+    color: grey;
+    float: right;
+    text-align: right;
 }
 
 a:hover, a:link {
     text-decoration:none;
 }
 
-.navbar-buttons {
-    font-family:"Mark","Avenir","Helvetica","Arial",sans-serif;
-    font-size: 13px;
-    padding-right: 0px !important;
-    margin-right: 0px !important;
-    white-space: nowrap;
-    color: white !important;
-    text-align: center !important;
-}
-
 .navbar-nav.navbar-center {
-    /* position: absolute; */
-    /* left: 50%; */
-    /* transform: translate(-50%, 10px); */
-    color: black !important;
-    text-align: center !important;
-    margin-top: -20px;
+    position: absolute;
+    right: 5%;
+    margin-top: -10px;
     height: 200px;
+    font-size: 14px;
 }
 
+a {
+    text-decoration: none;
+    color: grey !important;
+}
 
-.signup-button{
-    font-family:"Mark","Avenir","Helvetica","Arial",sans-serif;
-    color: white;
-    font-size: 13px !important;
+.lifeline-text {
+    position: absolute;
+    color: grey !important;
+    margin-top: -10px;
+    height: 200px;
+    font-size: 30px;
 }
 
 li {
@@ -121,27 +59,3 @@ ul {
     text-decoration: none;
     text-align: center !important;
 }
-
-@media screen and (max-width: 1144px) {
-    .title, title:hover {
-      font-size: 48px !important;
-    }
-    .hamilton-seal, .wenham-seal {
-        width: 80px;
-    }
-  }
-
-  @media screen and (max-width: 958px) {
-    .title, title:hover {
-      white-space: nowrap;
-    }
-    .hamilton-seal, .wenham-seal {
-        display: none;
-    }
-  }
-
-  @media screen and (max-width: 690px) {
-    .title, title:hover {
-      font-size: 36px;
-    }
-  }
