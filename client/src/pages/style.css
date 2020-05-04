@@ -2,11 +2,16 @@
     box-sizing: border-box;
 }
 
-body {
+.img-background {
     background: url("../images/farmers-market-background.jpg");
     background-repeat: no-repeat;
-    background-size: 100%;
-    /* width: 100%; */
+    background-position: center;
+    background-size: cover;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    position: fixed;
 }
 
 h4 {
@@ -24,8 +29,6 @@ h2 {
 
 form.search {
   overflow: auto;
-  /* margin-bottom: 10px; */
-  /* width: 100%; */
   display: inline-block;
 }
 
@@ -47,26 +50,6 @@ form.search button[type="submit"] {
     /* border-radius: 0 0 6px 6px; */
 }
 
-.register-box {
-    margin: 0 10% 0 10%;
-}
-
-/* .review-button {
-    Font-family: "Mark","Avenir","Helvetica","Arial",sans-serif;
-    font-size: 10px;
-    margin-top: 5px;
-    white-space: nowrap;
-    border-radius: 20px 20px 20px 20px !important;
-} */
-
-.login-password-field {
-    border-radius: 20px 0 0 20px !important;
-}
-
-.login-email-field {
-    border-radius: 20px 20px 20px 20px !important;
-}
-
 .login-submit-button {
     border-radius: 0 20px 20px 0 !important;
 }
@@ -75,12 +58,6 @@ form.search button[type="submit"] {
     height: 40px;
 }
 
-/* .signup-boxes {
-    margin: 0 0px 10px 0;
-    height: 36px;
-    border-radius: 3px 3px 3px 3px;
-    border: .5px solid #cccccc;
-} */
 
 .signup-container {
     padding: 20px;

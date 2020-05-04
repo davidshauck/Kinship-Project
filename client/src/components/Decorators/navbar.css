@@ -3,6 +3,7 @@
     text-align: right !important;
     padding: 0px;
     float: right !important;
+    z-index: 100;
 }
 
 .card {
