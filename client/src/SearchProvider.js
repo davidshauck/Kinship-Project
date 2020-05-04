@@ -24,6 +24,7 @@ class SearchProvider extends Component {
         cityDisabled: true,
         error: true,
         button: "Go",
+        hours: ["12:00 a.m., 12:30 a.m. 1:00 a.m."],
         handleInputChange: (event) => {
           this.setState({ ...this.state, search: event.target.value });
         },
