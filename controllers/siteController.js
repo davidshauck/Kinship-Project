@@ -34,7 +34,6 @@ module.exports = {
   },
   createListing: function (req, res) {
     console.log("HITTING CREATE??", req.body)
-    console.log(req.body)
     db.Listing
       .create(req.body)
       .then(dbModel => res.json({

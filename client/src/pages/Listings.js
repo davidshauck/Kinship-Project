@@ -9,21 +9,18 @@ import "./style.css";
 
 const Listings = () => {
   return (
-    <div>
+    <div className="img-background">
       <Container fluid>
         <Row>
-        <Col size="2"></Col>
-        <Col size="8">
-
-      <SearchBar/>
-      </Col>
-      <Col size="2"></Col>
-
-      </Row>
-
+          <Col size="2"></Col>
+          <Col size="8">
+            <SearchBar/>
+          </Col>
+            <Col size="2"></Col>
+        </Row>
         <Row>
         <Col size="1"></Col>
-          <Col size="10">
+          <Col size="10" className="list-overflow-container">
             <SearchConsumer className="content-inside">
               {context => (
                 <React.Fragment>
@@ -47,6 +44,20 @@ const Listings = () => {
                             facebook={listing.facebook}
                             twitter={listing.twitter}
                             instagram={listing.instagram}
+                            MondayOpen={listing.MondayOpen}
+                            TuesdayOpen={listing.TuesdayOpen}
+                            WednesdayOpen={listing.WednesdayOpen}
+                            ThursdayOpen={listing.ThursdayOpen}
+                            FridayOpen={listing.FridayOpen}
+                            SaturdayOpen={listing.SaturdayOpen}
+                            SundayOpen={listing.SundayOpen}
+                            MondayClose={listing.MondayClose}
+                            TuesdayClose={listing.TuesdayClose}
+                            WednesdayClose={listing.WednesdayClose}
+                            ThursdayClose={listing.ThursdayClose}
+                            FridayClose={listing.FridayClose}
+                            SaturdayClose={listing.SaturdayClose}
+                            SundayClose={listing.SundayClose}
                           />
                         </ListItem>
                       ))}

@@ -22,7 +22,7 @@ const ListingSchema = Yup.object().shape({
     , { message: "That is not a valid URL" })
 });
 
-const hours = ["12:00AM", "12:30AM", "1:00AM", "1:30AM", "2:00AM", "2:30AM", "3:00AM", "3:30AM", "4:00AM", "4:30AM", "5:00AM", "5:30AM", "6:00AM", "6:30AM", "7:00AM", "7:30AM", "8:00AM", "8:30AM", "8:00AM", "9:30AM", "10:00AM", "10:30AM", "11:00AM", "11:30AM",
+const hours = ["Closed", "12:00AM", "12:30AM", "1:00AM", "1:30AM", "2:00AM", "2:30AM", "3:00AM", "3:30AM", "4:00AM", "4:30AM", "5:00AM", "5:30AM", "6:00AM", "6:30AM", "7:00AM", "7:30AM", "8:00AM", "8:30AM", "8:00AM", "9:30AM", "10:00AM", "10:30AM", "11:00AM", "11:30AM",
                 "12:00PM", "12:30PM", "1:00PM", "1:30PM", "2:00PM", "2:30PM", "3:00PM", "3:30PM", "4:00PM", "4:30PM", "5:00PM", "5:30PM", "6:00PM", "6:30PM", "7:00PM", "7:30PM", "8:00PM", "8:30PM", "8:00PM", "9:30PM", "10:00PM", "10:30PM", "11:00PM", "11:30PM", "12:00PM",]
 
 const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -52,8 +52,8 @@ const ListingForm = (props) => {
             <h4>Create your business profile</h4>
             <Formik
               initialValues={{
-                // user: user.name,
-                // email: user.email,
+                user: user.name,
+                email: user.email,
                 name: "",
                 address1: "",
                 address2: "",
@@ -69,7 +69,22 @@ const ListingForm = (props) => {
                 facebook: "",
                 instagram: "",
                 categories: [],
-                hours: []
+               
+                MondayOpen: "",
+                TuesdayOpen: "",
+                WednesdayOpen: "",
+                ThursdayOpen: "",
+                FridayOpen: "",
+                SaturdayOpen: "",
+                SundayOpen: "",
+                MondayClose: "",
+                TuesdayClose: "",
+                WednesdayClose: "",
+                ThursdayClose: "",
+                FridayClose: "",
+                SaturdayClose: "",
+                SundayClose: "",
+                
               }}
               validationSchema={ListingSchema}
               onSubmit={(values, { setSubmitting }) => {
@@ -194,39 +209,39 @@ const ListingForm = (props) => {
                       </Field>                      
                     )} */}
 
-                    <Field as="select" name="hours" className="hours-boxes">
+                    <Field as="select" name="MondayOpen" className="hours-boxes">
                     {hours.map(hour => (
-                      <option key={"MondayOpen"+{hour}}>{hour}</option>
+                      <option value={hour} key={"MondayOpen"+{hour}}>{hour}</option>
                     ))}       
                     </Field>
-                    <Field as="select" name="hours" className="hours-boxes">
+                    <Field as="select" name="TuesdayOpen" className="hours-boxes">
                     {hours.map(hour => (
-                      <option key={"TuesdayOpen"+{hour}}>{hour}</option>
+                      <option value={hour} key={"TuesdayOpen"+{hour}}>{hour}</option>
                     ))}       
                     </Field>
-                    <Field as="select" name="hours" className="hours-boxes">
+                    <Field as="select" name="WednesdayOpen" className="hours-boxes">
                     {hours.map(hour => (
-                      <option key={"WednesdayOpen"+{hour}}>{hour}</option>
+                      <option value={hour} key={"WednesdayOpen"+{hour}}>{hour}</option>
                     ))}       
                     </Field>
-                    <Field as="select" name="hours" className="hours-boxes">
+                    <Field as="select" name="ThursdayOpen" className="hours-boxes">
                     {hours.map(hour => (
-                      <option key={"ThursdayOpen"+{hour}}>{hour}</option>
+                      <option value={hour} key={"ThursdayOpen"+{hour}}>{hour}</option>
                     ))}       
                     </Field>
-                    <Field as="select" name="hours" className="hours-boxes">
+                    <Field as="select" name="FridayOpen" className="hours-boxes">
                     {hours.map(hour => (
-                      <option key={"FridayOpen"+{hour}}>{hour}</option>
+                      <option value={hour} key={"FridayOpen"+{hour}}>{hour}</option>
                     ))}       
                     </Field>
-                    <Field as="select" name="hours" className="hours-boxes">
+                    <Field as="select" name="SaturdayOpen" className="hours-boxes">
                     {hours.map(hour => (
-                      <option key={"SaturdayOpen"+{hour}}>{hour}</option>
+                      <option value={hour} key={"SaturdayOpen"+{hour}}>{hour}</option>
                     ))}       
                     </Field>
-                    <Field as="select" name="hours" className="hours-boxes">
+                    <Field as="select" name="SundayOpen" className="hours-boxes">
                     {hours.map(hour => (
-                      <option key={"SundayOpen"+{hour}}>{hour}</option>
+                      <option value={hour} key={"SundayOpen"+{hour}}>{hour}</option>
                     ))}       
                     </Field>
                     <div className="days-container">
@@ -238,51 +253,51 @@ const ListingForm = (props) => {
                     <div className="days">To</div>
                     <div className="days">To</div>
                     </div>
-                    <Field as="select" name="hours" className="hours-boxes">
+                    <Field as="select" disabled={false} name="MondayClose" className="hours-boxes">
                     {hours.map(hour => (
-                      <option key={"MondayClose"+{hour}}>{hour}</option>
+                      <option value={hour} key={"MondayClose"+{hour}}>{hour}</option>
                     ))}       
                     </Field>
-                    <Field as="select" name="hours" className="hours-boxes">
+                    <Field as="select" name="TuesdayClose" className="hours-boxes">
                     {hours.map(hour => (
-                      <option key={"TuesdayClose"+{hour}}>{hour}</option>
+                      <option value={hour} key={"TuesdayClose"+{hour}}>{hour}</option>
                     ))}       
                     </Field>
-                    <Field as="select" name="hours" className="hours-boxes">
+                    <Field as="select" name="WednesdayClose" className="hours-boxes">
                     {hours.map(hour => (
-                      <option key={"WednesdayClose"+{hour}}>{hour}</option>
+                      <option value={hour} key={"WednesdayClose"+{hour}}>{hour}</option>
                     ))}       
                     </Field>
-                    <Field as="select" name="hours" className="hours-boxes">
+                    <Field as="select" name="ThursdayClose" className="hours-boxes">
                     {hours.map(hour => (
-                      <option key={"ThursdayClose"+{hour}}>{hour}</option>
+                      <option value={hour} key={"ThursdayClose"+{hour}}>{hour}</option>
                     ))}       
                     </Field>
-                    <Field as="select" name="hours" className="hours-boxes">
+                    <Field as="select" name="FridayClose" className="hours-boxes">
                     {hours.map(hour => (
-                      <option key={"FridayClose"+{hour}}>{hour}</option>
+                      <option value={hour} key={"FridayClose"+{hour}}>{hour}</option>
                     ))}       
                     </Field>
-                    <Field as="select" name="hours" className="hours-boxes">
+                    <Field as="select" name="SaturdayClose" className="hours-boxes">
                     {hours.map(hour => (
-                      <option key={"SaturdayClose"+{hour}}>{hour}</option>
+                      <option value={hour} key={"SaturdayClose"+{hour}}>{hour}</option>
                     ))}       
                     </Field>
-                    <Field as="select" name="hours" className="hours-boxes">
+                    <Field as="select" name="SundayClose" className="hours-boxes">
                     {hours.map(hour => (
-                      <option key={"SundayClose"+{hour}}>{hour}</option>
+                      <option value={hour} key={"SundayClose"+{hour}}>{hour}</option>
                     ))}       
                     </Field>
                     <Field
                       name="image"
                       type="text"
-                      className="col-11 signup-boxes"
+                      className="col-12 signup-boxes"
                       placeholder="Logo or image (paste in url)"
                     />
                     <Field
                       name="website"
                       type="text"
-                      className="col-11 signup-boxes"
+                      className="col-12 signup-boxes"
                       placeholder="Website"
                     />
                     <Field
@@ -338,9 +353,9 @@ const ListingForm = (props) => {
 const ListingSignup = props => {
   const { isAuthenticated } = useAuth0();
   if (!isAuthenticated) {
-    return <ListingForm />
+    // return <ListingForm />
 
-    // return <Redirect to="login" />
+    return <Redirect to="login" />
   } else {
     return <ListingForm />
   }
