@@ -10,7 +10,7 @@ const upload = multer({
 
 router.route("/new").post(upload.single("file"), (req, res) => {
     const file = req.file;
-    const s3FileURL = process.env.AWS_Uploaded_File_URL_LINK;
+    const s3FileURL = process.env.AWS_UPLOAD_URL;
 
     let s3bucket = new AWS.S3({
         accessKeyId: process.env.AWS_ACCESS_KEY_ID,
