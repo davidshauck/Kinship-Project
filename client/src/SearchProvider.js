@@ -24,7 +24,6 @@ class SearchProvider extends Component {
         cityDisabled: true,
         error: true,
         button: "Go",
-        className: "btn btn-success search-button",
         handleInputChange: (event) => {
           this.setState({ ...this.state, search: event.target.value });
         },
@@ -158,7 +157,7 @@ class SearchProvider extends Component {
             console.log("RESDATA", res.data);
             const statesDropdown = [...new Set(res.data.map(x => x.us_state))];
             console.log("STATES DROPDOWN", statesDropdown)
-            this.setState({ ...this.state, statesDropdown: statesDropdown, listings: res.data, error: false });      
+            this.setState({ ...this.state, statesDropdown: statesDropdown, citiesDropdown: [], listings: res.data, error: false });      
             })
           .catch(err => this.setState({ ...this.state, error: err.message }));
       };

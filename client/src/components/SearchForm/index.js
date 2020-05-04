@@ -63,7 +63,7 @@ function SearchForm() {
           </select>
           <FormBtn 
             button={context.state.button}
-            className={context.state.className}
+            className="btn btn-success search-button"
             value={context.state.search}
             onClick={context.state.handleSearch}
           />

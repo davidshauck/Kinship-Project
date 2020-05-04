@@ -44,12 +44,6 @@ form.search button[type="submit"] {
     display: inline-block !important;
 }
 
-.box {
-    background-color: white;
-    padding: 10px;
-    /* border-radius: 0 0 6px 6px; */
-}
-
 .login-submit-button {
     border-radius: 0 20px 20px 0 !important;
 }
@@ -58,7 +52,6 @@ form.search button[type="submit"] {
     height: 40px;
 }
 
-
 .signup-container {
     padding: 20px;
 }
@@ -66,10 +59,6 @@ form.search button[type="submit"] {
 .register-submit {
     padding: 5px 20px 5px 20px !important;
     font-size: 13px !important;
-}
-
-.spacer {
-    padding-left: 5px;
 }
 
 .login-button, .register-submit, .save-button {
@@ -85,9 +74,9 @@ form.search button[type="submit"] {
 
 textarea {
     padding: 0px;
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 5px 5px 5px 5px;
 }
 
-.col-12 {
-    padding: 0px !important;
+.no-results {
+    text-align: center;
 }
