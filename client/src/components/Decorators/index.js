@@ -3,8 +3,23 @@ import { Link } from "react-router-dom";
 import HamiltonSeal from "../../images/hamilton-seal.png"
 import WenhamSeal from "../../images/wenham-seal.png"
 import { useAuth0 } from "../../react-auth0-spa";
-import SearchForm from "../SearchForm"
+import { Loading } from "../Decorators/loading";
+
 import "./navbar.css";
+
+export const FeatureCard = (props) => (
+  <div className="card">
+    <div className="card-body">
+      <div className="ad">Advertisement</div>
+      <img src={props.image} alt="..." className="img-thumbnail" />
+      <div className="card-text">{props.name}</div>
+      <div className="card-text">{props.address1} {props.city}, {props.us_state}</div>
+      <div className="card-text">{props.phone}</div>
+      <div>{props.telephone}</div>
+      {props.categories ? props.categories.map(cateogry => <span>{cateogry} </span>) : ""}
+    </div>
+  </div>
+)
 
 export const FeatureCard1 = (props) => (
   <div className="card">
@@ -35,19 +50,21 @@ export const FeatureCard2 = (props) => (
 
 export const FeatureCard3 = (props) => (
   <div className="card">
-    <div className="card-body">
-      <img src={props.image} alt="..." className="img-thumbnail" />
+    <div className="card-body" onClick={props.onClick}>
       <h5 className="card-title">{props.name}</h5>
-      <div className="card-text">{props.address1} {props.city}, {props.us_state}</div>
-      <div className="card-text">{props.phone}</div>
-      <div>{props.telephone}</div>
-      {props.categories ? props.categories.map(cateogry => <span>{cateogry} </span>) : ""}
+      <p className="card-text">{props.address1} {props.city}, {props.us_state}</p>
+      <p className="card-text">{props.phone}</p>
+      <p>{props.telephone}</p>
+      {props.categories ? props.categories.map((cateogry, index) => <span key={index}>{cateogry} </span>) : ""}
     </div>
   </div>
 )
 
 export const Links = props => {
-  const { isAuthenticated, loginWithRedirect, logout, user } = useAuth0();
+  const { isAuthenticated, loginWithRedirect, logout, user, loading } = useAuth0();
+  if (loading) {
+    return <Loading />
+  }
   if (isAuthenticated && user) {
     return (
       <div className="navbar-buttons">

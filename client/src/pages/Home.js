@@ -1,4 +1,5 @@
 import React from "react";
+// import DeleteBtn from "../components/DeleteBtn";
 import HomeCard from "../components/HomeCard"
 import "./style.css";
 
