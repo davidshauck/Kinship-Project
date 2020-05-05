@@ -9,41 +9,11 @@ import "./navbar.css";
 
 export const FeatureCard = (props) => (
   <div className="card">
-    <div className="card-body">
-      <div className="ad">Advertisement</div>
-      <img src={props.image} alt="..." className="img-thumbnail" />
-      <div className="card-text">{props.name}</div>
-      <div className="card-text">{props.address1} {props.city}, {props.us_state}</div>
-      <div className="card-text">{props.phone}</div>
-      <div>{props.telephone}</div>
-      {props.categories ? props.categories.map(cateogry => <span>{cateogry} </span>) : ""}
-    </div>
-  </div>
-)
-
-export const FeatureCard1 = (props) => (
-  <div className="card">
-    <div className="card-body">
-      <div className="ad">Advertisement</div>
-      <img src={props.image} alt="..." className="img-thumbnail" />
-      <div className="card-text">{props.name}</div>
-      <div className="card-text">{props.address1} {props.city}, {props.us_state}</div>
-      <div className="card-text">{props.phone}</div>
-      <div>{props.telephone}</div>
-      {props.categories ? props.categories.map(cateogry => <span>{cateogry} </span>) : ""}
-    </div>
-  </div>
-)
-
-export const FeatureCard2 = (props) => (
-  <div className="card">
-    <div className="card-body">
-      <img src={props.image} alt="..." className="img-thumbnail" />
       <h5 className="card-title">{props.name}</h5>
-      <div className="card-text">{props.address1} {props.city}, {props.us_state}</div>
-      <div className="card-text">{props.phone}</div>
-      <div>{props.telephone}</div>
-      {props.categories ? props.categories.map(cateogry => <span>{cateogry} </span>) : ""}
+      <p className="card-text">{props.address1} {props.city}, {props.us_state}</p>
+      <p className="card-text">{props.phone}</p>
+      <p>{props.telephone}</p>
+      {props.categories ? props.categories.map((cateogry, index) => <span key={index}>{cateogry} </span>) : ""}
     </div>
   </div>
 )
