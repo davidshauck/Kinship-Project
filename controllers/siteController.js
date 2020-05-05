@@ -42,6 +42,14 @@ module.exports = {
       }))
       .catch(err => res.json(err));
   },
+  updateListing: function (req, res) {
+    db.Listing
+      .findOneAndUpdate({
+        _id: req.body._id
+      }, req.body)
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   saveListingMessage: function (req, res) {
     console.log("HIT TUTOR MESSAGES", req.body)
     db.Listing

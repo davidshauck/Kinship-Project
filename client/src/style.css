@@ -1,5 +1,14 @@
-.footer-spacer {
-    margin-bottom: 4%;
+.navbar {
+    /* margin-bottom: 20px; */
+    /* height: 40px; */
+    text-align: center !important;
+    padding: 0px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.spacer {
+    margin: 4%;
 }
 
 .checkbox {
