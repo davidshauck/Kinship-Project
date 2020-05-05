@@ -14,7 +14,7 @@ export const FeatureCard = (props) => (
       <p className="card-text">{props.address1} {props.city}, {props.us_state}</p>
       <p className="card-text">{props.phone}</p>
       <p>{props.telephone}</p>
-      {props.categories ? props.categories.map((cateogry, index) => <span key={index}>{cateogry}</span>) : ""}
+      {props.categories ? props.categories.map((cateogry, index) => <span key={index}>{cateogry} </span>) : ""}
     </div>
   </div>
 )

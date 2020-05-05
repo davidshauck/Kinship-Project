@@ -39,10 +39,10 @@ module.exports = {
       }))
       .catch(err => res.json(err));
   },
-  updateStudent: function (req, res) {
+  updateListing: function (req, res) {
     db.Listing
       .findOneAndUpdate({
-        _id: req.params.id
+        _id: req.body._id
       }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));

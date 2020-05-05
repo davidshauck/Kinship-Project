@@ -4,6 +4,9 @@ export default {
   saveListing: function (listingData) {
     return axios.post("/api/listings", listingData);
   },
+  updateListing: (listing) =>{
+    return axios.post("/api/listings/update", listing)
+  },
   getListings: function (query) {
     return axios.post("/api/listings/search", {
       data: query

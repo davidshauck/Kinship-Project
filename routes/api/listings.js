@@ -10,6 +10,7 @@ router.route("/")
 
 router.route("/search").post(siteController.findAllListings)
 router.route("/random").post(siteController.getRandom)
+router.route("/update").post(siteController.updateListing)
 // Matches with "/api/listings/:id"
 router.route("/:id")
   .get(siteController.findListingById)
