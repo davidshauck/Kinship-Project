@@ -12,22 +12,3 @@
     margin: 2px;
 
 }
-
-.hours-boxes {
-    margin: 5px;
-    height: 42px;
-    width: 13%;
-}
-
-.days-container {
-    display: flex;
-    padding: 5px;
-    margin: 0px !important;
-}
-
-.days {
-    width: 14% !important;
-    margin: 3px;
-    text-align: center;
-    text-transform: uppercase;
-}

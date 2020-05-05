@@ -4,9 +4,8 @@ import { useAuth0 } from "../react-auth0-spa";
 import { Redirect } from "react-router-dom"
 import { Formik, Form, Field } from "formik";
 import * as Yup from 'yup';
-import { Col, Row, Container } from "../components/Grid";
+import { Row } from "../components/Grid";
 import "./style.css";
-
 
 const ListingSchema = Yup.object().shape({
   zip_code: Yup.string().matches(/(^\d{5}$)|(^\d{5}-\d{4}$)/, { message: "That is not a valid zip code" })
@@ -26,7 +25,7 @@ const ListingSchema = Yup.object().shape({
 
 
 const hours = ["Closed", "12:00AM", "12:30AM", "1:00AM", "1:30AM", "2:00AM", "2:30AM", "3:00AM", "3:30AM", "4:00AM", "4:30AM", "5:00AM", "5:30AM", "6:00AM", "6:30AM", "7:00AM", "7:30AM", "8:00AM", "8:30AM", "8:00AM", "9:30AM", "10:00AM", "10:30AM", "11:00AM", "11:30AM",
-  "12:00PM", "12:30PM", "1:00PM", "1:30PM", "2:00PM", "2:30PM", "3:00PM", "3:30PM", "4:00PM", "4:30PM", "5:00PM", "5:30PM", "6:00PM", "6:30PM", "7:00PM", "7:30PM", "8:00PM", "8:30PM", "8:00PM", "9:30PM", "10:00PM", "10:30PM", "11:00PM", "11:30PM", "12:00PM",]
+              "12:00PM", "12:30PM", "1:00PM", "1:30PM", "2:00PM", "2:30PM", "3:00PM", "3:30PM", "4:00PM", "4:30PM", "5:00PM", "5:30PM", "6:00PM", "6:30PM", "7:00PM", "7:30PM", "8:00PM", "8:30PM", "8:00PM", "9:30PM", "10:00PM", "10:30PM", "11:00PM", "11:30PM", "12:00PM",]
 
 const daysOfWeek = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
@@ -45,8 +44,10 @@ export const ListingForm = (props) => {
   const [redirect, setRedirect] = useState(false)
   const options = ["Dining", "Essentials", "Take-Out", "Delivery", "Retail", "Services"]
   return (
-    <div className="container spacer">
-      <h4 style={{ color: "black" }}>Create your business profile</h4>
+    <Row>
+      <div className="col-2"></div>
+      <div className="col-8 profile-box">
+      <div className="profile-head">Create your business profile</div>
       <Formik
         initialValues={props.chosen ? props.chosen : {
           user: user.name,
@@ -193,13 +194,14 @@ export const ListingForm = (props) => {
 
               {/* TRIED TO ITERATE OVER DAYS OF WEEK, WORKED WITH THE CONSOLE LOG BUT NOT WITH THE FORM */}
               {/* {times (daysOfWeek.length) (i => 
-            // console.log(daysOfWeek[i])
-            <Field as="select" name="hours" className="hours-boxes">
-            {hours.map(hour => (
-              <option key={daysOfWeek[i]+"Open"+{hour}}>{hour}</option>
-            ))}       
-            </Field>                      
-          )} */}
+
+                // console.log(daysOfWeek[i])
+                <Field as="select" name="hours" className="hours-boxes">
+                {hours.map(hour => (
+                  <option key={daysOfWeek[i]+"Open"+{hour}}>{hour}</option>
+                ))}       
+                </Field>                      
+              )} */}
 
               <Field as="select" name="MondayOpen" className="hours-boxes">
                 {hours.map(hour => (
@@ -327,11 +329,14 @@ export const ListingForm = (props) => {
               <textarea className="form-control" rows="10" name="description" onChange={handleChange} placeholder="Message to your customers, store hours, etc." />
               <button className="btn btn-secondary save-button">
                 {props.button_text ? props.button_text : "Save"}
-              </button>
+              </button>              
             </Form>
           )}
       </Formik>
-    </div >
+    </div>
+    <div className="col-2"></div>
+    </Row>
+    
   )
 }
 
@@ -346,7 +351,6 @@ const ListingSignup = props => {
   }
 
   if (!isAuthenticated) {
-    // return <ListingForm />
 
     return <Redirect to="login" />
   }

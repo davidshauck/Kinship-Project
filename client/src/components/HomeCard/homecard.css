@@ -53,3 +53,8 @@ h2 {
   display: inline-block;
   letter-spacing: 4px;
 }
+
+row.featured-container {
+  position: fixed;
+  top: 155%;
+}

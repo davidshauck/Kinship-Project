@@ -134,3 +134,10 @@ textarea {
     font-size: 30px;
     margin-left: 10px;
 }
+
+.profile-box {
+    border: 1px solid #cccccc;
+    padding-bottom: 60px;
+    margin-top: 30px;
+    background-color: #f0f0f0;
+}

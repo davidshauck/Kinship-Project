@@ -127,7 +127,7 @@ class SearchProvider extends Component {
                 throw new Error(res.data.message);
               }
               console.log("CITIES", res.data)
-              const citiesDropdown = [...new Set(res.data.map(y => y.city))];
+              const citiesDropdown = [...new Set(res.data.map(y => y.city).sort())];
               this.setState({ ...this.state, citiesDropdown: citiesDropdown })
               console.log("CITIES DROPDOWN ", this.state.citiesDropdown)
             })
@@ -156,7 +156,7 @@ class SearchProvider extends Component {
               throw new Error(res.data.message);
             }
             console.log("RESDATA", res.data);
-            const statesDropdown = [...new Set(res.data.map(x => x.us_state))];
+            const statesDropdown = [...new Set(res.data.map(x => x.us_state).sort())];
             console.log("STATES DROPDOWN", statesDropdown)
             this.setState({ ...this.state, statesDropdown: statesDropdown, citiesDropdown: [], listings: res.data, error: false });      
             })

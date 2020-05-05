@@ -9,6 +9,17 @@ import "./navbar.css";
 
 export const FeatureCard = (props) => (
   <div className="card">
+      <h5 className="card-title">{props.name}</h5>
+      <p className="card-text">{props.address1} {props.city}, {props.us_state}</p>
+      <p className="card-text">{props.phone}</p>
+      <p>{props.telephone}</p>
+      {props.categories ? props.categories.map((cateogry, index) => <span key={index}>{cateogry} </span>) : ""}
+    </div>
+  </div>
+)
+
+export const FeatureCard3 = (props) => (
+  <div className="card">
     <div className="card-body" onClick={props.onClick}>
       <h5 className="card-title">{props.name}</h5>
       <p className="card-text">{props.address1} {props.city}, {props.us_state}</p>
@@ -29,21 +40,20 @@ export const Links = props => {
       <div className="navbar-buttons">
         <div className="lifeline-text">
           <Link to="/" style={{ textDecoration: 'none' }}>
-            Local Lifeline
+            Local Lifeline | <span className="small-text">Your community resource</span>
           </Link>
         </div>
         <ul className="navbar-nav navbar-center">
+          <Link push to="/">
+            <li className="nav-item">
+              <div className="nav-link">What is Local Lifeline?</div>
+            </li>
+          </Link>
           <Link push to="/new-listing">
             <li className="nav-item">
               <div className="nav-link">Add a listing</div>
             </li>
           </Link>
-          <li className="nav-item">
-            <a className="nav-link" href="mailto:admin@kinshipfarm.org?subject=Inquiry">Contact</a>
-          </li>
-          <li>
-            <a className="nav-link" href="mailto:info@brixyfy.com?subject=Report a bug">Report a bug</a>
-          </li>
           <Link to="/dashboard">
             <li className="nav-item">
               <div className="nav-link">My listings</div>
@@ -62,21 +72,20 @@ export const Links = props => {
       <div className="navbar-buttons">
         <div className="lifeline-text">
           <Link to="/" style={{ textDecoration: 'none' }}>
-            Local Lifeline
+            Local Lifeline | <span className="small-text">Your community resource</span>
           </Link>
         </div>
         <ul className="navbar-nav navbar-center">
+          <Link push to="/">
+            <li className="nav-item">
+              <div className="nav-link">What is Local Lifeline?</div>
+            </li>
+          </Link>
           <Link push to="/new-listing">
             <li className="nav-item">
               <div className="nav-link">Add your listing</div>
             </li>
           </Link>
-          <li className="nav-item">
-            <a className="nav-link" href="mailto:admin@kinshipfarm.org?subject=Inquiry">Contact</a>
-          </li>
-          <li>
-            <a className="nav-link" href="mailto:info@brixyfy.com?subject=Report a bug">Report a bug</a>
-          </li>
           <Link to="/login">
             <li className="nav-item">
               <div className="nav-link" onClick={() => loginWithRedirect({})}>Login</div>
