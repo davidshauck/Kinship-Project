@@ -21,7 +21,7 @@ const Listings = () => {
         <Row>
         <Col size="1"></Col>
           <Col size="10" className="list-overflow-container">
-            <SearchConsumer className="content-inside">
+            <SearchConsumer>
               {context => (
                 <React.Fragment>
                   {context.state.listings.length ? (

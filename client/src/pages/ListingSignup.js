@@ -5,6 +5,8 @@ import { Redirect } from "react-router-dom"
 import { Formik, Form, Field } from "formik";
 import * as Yup from 'yup';
 import { Col, Row, Container } from "../components/Grid";
+import "./style.css";
+
 
 const ListingSchema = Yup.object().shape({
   zip_code: Yup.string().matches(/(^\d{5}$)|(^\d{5}-\d{4}$)/, { message: "That is not a valid zip code" })
@@ -44,12 +46,12 @@ const ListingForm = (props) => {
 
   if (!redirect) {
     return (
-      <div className="signup-container">
+      <div>
         <Container fluid>
           <Row>
             <Col size="2"></Col>
-            <Col size="8">
-            <h4>Create your business profile</h4>
+            <div className="col-8 signup-container">
+            <h1 className="profile-head">Create your business profile</h1>
             <Formik
               initialValues={{
                 user: user.name,
@@ -291,34 +293,35 @@ const ListingForm = (props) => {
                     <Field
                       name="image"
                       type="text"
-                      className="col-12 signup-boxes"
+                      className="image-box"
                       placeholder="Logo or image (paste in url)"
                     />
                     <Field
                       name="website"
                       type="text"
-                      className="col-12 signup-boxes"
+                      className="website-box"
                       placeholder="Website"
                     />
                     <Field
                       name="twitter"
                       type="text"
-                      className="col-4 signup-boxes"
+                      className="social-boxes"
                       placeholder="http://twitter.com/your-twitter"
                     />
                     <Field
                       name="facebook"
                       type="text"
-                      className="col-3 signup-boxes"
+                      className="social-boxes"
                       placeholder="http://facebook.com/your-facebook"
                     />
                     <Field
                       name="instagram"
                       type="text"
-                      className="col-4 signup-boxes"
+                      className="social-boxes"
                       placeholder="http://instagram.com/your-instagram"
                     />
-                    <h4 style={{ color: "black" }}>Categories (check all that apply)</h4>
+                    <div className="col-12">
+                    <h4>Categories (check all that apply)</h4>
                     {options.map((item, index) => (
                       <>
                         <label key={index} className="form-check-label checkbox">
@@ -328,8 +331,9 @@ const ListingForm = (props) => {
                         </label>
                       </>
                     ))}
+                    </div>
                     <div className="col-12" style={{ marginBottom: "50px"}}>
-                      <h4 style={{ color: "black" }}>Additional details</h4>
+                      <h4>Additional details</h4>
                       {errors ? <p>{JSON.stringify(errors.zip_code)}</p> : null}
                       <textarea className="form-control" rows="10" name="description" onChange={handleChange} placeholder="Message to your customers, store hours, etc." />
                       <button type="submit" className="btn btn-secondary save-button">
@@ -339,7 +343,7 @@ const ListingForm = (props) => {
                   </Form>
                 )}
             </Formik>
-          </Col>
+          </div>
           <Col size="2"></Col>
         </Row>
       </Container>
