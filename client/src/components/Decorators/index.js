@@ -27,18 +27,26 @@ export const Links = props => {
   if (isAuthenticated && user) {
     return (
       <div className="navbar-buttons">
+        <div className="lifeline-text">
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            Local Lifeline
+          </Link>
+        </div>
         <ul className="navbar-nav navbar-center">
           <Link push to="/new-listing">
             <li className="nav-item">
-              <div className="nav-link">Add your listing</div>
+              <div className="nav-link">Add a listing</div>
             </li>
           </Link>
           <li className="nav-item">
             <a className="nav-link" href="mailto:admin@kinshipfarm.org?subject=Inquiry">Contact</a>
           </li>
+          <li>
+            <a className="nav-link" href="mailto:info@brixyfy.com?subject=Report a bug">Report a bug</a>
+          </li>
           <Link to="/dashboard">
             <li className="nav-item">
-              <div className="nav-link">My listing</div>
+              <div className="nav-link">My listings</div>
             </li>
           </Link>
           <Link push to="/">
@@ -52,12 +60,12 @@ export const Links = props => {
   } else {
     return (
       <div className="navbar-buttons">
+        <div className="lifeline-text">
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            Local Lifeline
+          </Link>
+        </div>
         <ul className="navbar-nav navbar-center">
-          {/* <Link to="/">
-            <li className="nav-item">
-              <div className="nav-link">Help For Businesses</div>
-            </li>
-          </Link> */}
           <Link push to="/new-listing">
             <li className="nav-item">
               <div className="nav-link">Add your listing</div>
@@ -65,6 +73,9 @@ export const Links = props => {
           </Link>
           <li className="nav-item">
             <a className="nav-link" href="mailto:admin@kinshipfarm.org?subject=Inquiry">Contact</a>
+          </li>
+          <li>
+            <a className="nav-link" href="mailto:info@brixyfy.com?subject=Report a bug">Report a bug</a>
           </li>
           <Link to="/login">
             <li className="nav-item">
@@ -78,19 +89,9 @@ export const Links = props => {
 }
 
 export const NavJumbo = props => (
-  <div className="jumbotron jumbotron-fluid header">
-    <div className="container">
-      <Link to="/" style={{ textDecoration: 'none' }}>
-        <img className="hamilton-seal" alt="Hamilton Seal" href="/" src={HamiltonSeal} />
-        <img className="wenham-seal" alt="Wenham Seal" href="/" src={WenhamSeal} />
-        <h1 className="title">Virtual Hamilton-Wenham</h1>
-        <p className="subhead">Serving Community – Providing Peace-of-Mind</p>
-      </Link>
-    </div>
-    <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm bg-dark">
+    <nav className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm bg-none">
       <Links />
     </nav>
-  </div>
 )
 
 

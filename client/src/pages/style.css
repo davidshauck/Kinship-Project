@@ -1,5 +1,17 @@
-* {
+* body html {
     box-sizing: border-box;
+}
+
+.img-background {
+    background: url("../images/farmers-market-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    position: fixed;
 }
 
 h4 {
@@ -17,8 +29,6 @@ h2 {
 
 form.search {
   overflow: auto;
-  /* margin-bottom: 10px; */
-  /* width: 100%; */
   display: inline-block;
 }
 
@@ -34,32 +44,6 @@ form.search button[type="submit"] {
     display: inline-block !important;
 }
 
-.box {
-    background-color: white;
-    padding: 10px;
-    border-radius: 0 0 6px 6px;
-}
-
-.register-box {
-    margin: 0 10% 0 10%;
-}
-
-.review-button {
-    Font-family: "Mark","Avenir","Helvetica","Arial",sans-serif;
-    font-size: 10px;
-    margin-top: 5px;
-    white-space: nowrap;
-    border-radius: 20px 20px 20px 20px !important;
-}
-
-.login-password-field {
-    border-radius: 20px 0 0 20px !important;
-}
-
-.login-email-field {
-    border-radius: 20px 20px 20px 20px !important;
-}
-
 .login-submit-button {
     border-radius: 0 20px 20px 0 !important;
 }
@@ -68,20 +52,9 @@ form.search button[type="submit"] {
     height: 40px;
 }
 
-.signup-boxes {
-    margin: 0 0px 10px 0;
-    height: 36px;
-    border-radius: 20px 20px 20px 20px;
-    border: .5px solid #cccccc;
-}
-
 .register-submit {
     padding: 5px 20px 5px 20px !important;
     font-size: 13px !important;
-}
-
-.spacer {
-    padding-left: 5px;
 }
 
 .login-button, .register-submit, .save-button {
@@ -97,9 +70,67 @@ form.search button[type="submit"] {
 
 textarea {
     padding: 0px;
-    border-radius: 20px 20px 20px 20px;
+    border-radius: 5px 5px 5px 5px;
 }
 
-.col-12 {
-    padding: 0px !important;
+.no-results {
+    text-align: center;
+}
+
+.signup-container {
+    border: 1px solid #ccc;
+    margin-top: 30px;
+    background-color: #f0f0f0;
+    height: 10%;
+    overflow: scroll;
+    border-radius: 6px;     
+}
+
+.signup-boxes, .image-box, .website-box, .social-boxes {
+    margin: 5px;
+    height: 50px;
+    border: 1px solid #ccc
+}
+
+.image-box, .website-box {
+    width: 48%;
+    display: inline-block !important;
+    padding: 10px;
+}
+
+.social-boxes {
+    width: 32%;
+    display: inline-block !important;
+    padding: 10px;
+}
+
+.hours-boxes {
+    margin: 5px;
+    height: 42px;
+    width: 12%;
+}
+
+.days-container {
+    display: flex;
+    padding: 5px;
+    margin: 0px !important;
+}
+
+.days {
+    width: 12% !important;
+    margin: 3px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.checkbox {
+    margin: .5% 2.5%;
+    font-size: 20px;
+}
+
+.profile-head {
+    font-family:"Mark","Avenir","Helvetica","Arial",sans-serif;
+    margin-top: 20px;
+    font-size: 30px;
+    margin-left: 10px;
 }

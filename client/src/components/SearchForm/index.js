@@ -12,29 +12,60 @@ function SearchForm() {
         <SearchConsumer>
           {context => (
           <React.Fragment>
-
-          <input
+          <select
+            value={context.state.listings.us_state}
+            onChange={context.state.handleUSStateChange}
+            name="us_state"
+            list="us_states"
+            type="text"
+            className={"dropdown"}
+            placeholder="Your state"
+            id="us_state"
+          >
+            <option disabled selected>Your state</option>
+            {context.state.listings.length} ? 
+            {context.state.statesDropdown.map(us_statelisting => (
+              <option key={us_statelisting}>{us_statelisting}</option>
+            ))}) : );
+          </select>
+          <select 
+            value={context.state.listings.city}
+            onChange={context.state.handleCityChange}
+            name="city"
+            list="cities"
+            type="text"
+            className={"dropdown city-dropdown"}
+            placeholder="Your town"
+            id="city"
+            disabled={context.state.cityDisabled}
+          >
+            {console.log("STATES-LOWER ", context.state.listings)}
+            <option disabled selected>Your town</option>
+            {context.state.listings.length} ?
+            {context.state.citiesDropdown.map(city_listing => (
+              <option key={city_listing}>{city_listing}</option>
+            ))}) : );
+            </select>
+            <select
             value={context.state.search}
             onChange={context.state.handleInputChange}
             name="category"
             list="categories"
             type="text"
-            className={"search-bar"}
-            placeholder="Find info for...."
+            className={"dropdown"}
+            placeholder="Find businesses"
             id="category"
-          />
-          <datalist id="categories">
+          >
+            <option selected>Find businesses</option>
             {context.state.categories.map(category => (
-              <option value={category} key={category} />
-            ))}
-          </datalist>
-          {/* <Link to={"/students/"}> */}
+              <option key={category}>{category}</option>
+            ))}) : );
+          </select>
           <FormBtn 
             button={context.state.button}
-            className={context.state.className}
+            className="btn btn-success search-button"
             value={context.state.search}
-            onClick={context.state.handleFormSubmit}
-            // onClick={this.state.history.push('/students')}
+            onClick={context.state.handleSearch}
           />
           </React.Fragment>
           )}

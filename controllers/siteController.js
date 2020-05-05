@@ -4,10 +4,14 @@ const mongoose = require("mongoose");
 // Defining methods for the siteController
 module.exports = {
   findAllListings: function (req, res) {
-    let query = req.body.data ? {
-      categories: req.body.data
-    } : {}
-    console.log("HERE'S THE QUERY", req.body.data)
+    let query = req.body.data ? req.body.data
+    // {
+    //   categories: req.body.data.search,
+    //   city: req.body.data.city,
+    //   us_state: req.body.data.us_state
+    // } 
+    : {}
+    console.log("HERE'S THE QUERY", query)
     db.Listing
       .find(query)
       .sort({
@@ -30,7 +34,6 @@ module.exports = {
   },
   createListing: function (req, res) {
     console.log("HITTING CREATE??", req.body)
-    console.log(req.body)
     db.Listing
       .create(req.body)
       .then(dbModel => res.json({
@@ -76,6 +79,18 @@ module.exports = {
     res.json({
       result: random_listing[0]
     })
+  },
+  getCities: async (req, res) => {
+    let query = req.body.data ? {
+      us_state: req.body.data
+    } : {}
+    console.log("REQ BODY CITY STATE", req.body.data)
+    await db.Listing
+      .find(query)
+      .then(dbModel => {
+        console.log(dbModel)
+        res.json(dbModel)
+      }).catch(err => res.status(422).json(err));
   },
   getListingsByUser: async (req, res) => {
     const listings = await db.Listing.find({

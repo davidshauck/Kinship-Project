@@ -3,3 +3,31 @@
     margin: 0px !important;
     padding: 0px !important;
 }
+.search-button {
+    border-radius: 6px !important;
+    height: 45px !important;
+    vertical-align: center;
+    box-shadow: 3px 4px 4px #cccccc;
+    width: 200px;
+    margin: 2px;
+
+}
+
+.hours-boxes {
+    margin: 5px;
+    height: 42px;
+    width: 13%;
+}
+
+.days-container {
+    display: flex;
+    padding: 5px;
+    margin: 0px !important;
+}
+
+.days {
+    width: 14% !important;
+    margin: 3px;
+    text-align: center;
+    text-transform: uppercase;
+}

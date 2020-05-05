@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt-nodejs");
 
 const Schema = mongoose.Schema;
 
@@ -59,6 +58,48 @@ const listingSchema = new Schema({
     type: String
   },
   instagram: {
+    type: String
+  },
+  MondayOpen: {
+    type: String
+  },
+  TuesdayOpen: {
+    type: String
+  },
+  WednesdayOpen: {
+    type: String
+  },
+  ThursdayOpen: {
+    type: String
+  },
+  FridayOpen: {
+    type: String
+  },
+  SaturdayOpen: {
+    type: String
+  },
+  SundayOpen: {
+    type: String
+  },
+  MondayClose: {
+    type: String
+  },
+  TuesdayClose: {
+    type: String
+  },
+  WednesdayClose: {
+    type: String
+  },
+  ThursdayClose: {
+    type: String
+  },
+  FridayClose: {
+    type: String
+  },
+  SaturdayClose: {
+    type: String
+  },
+  SundayClose: {
     type: String
   },
 });

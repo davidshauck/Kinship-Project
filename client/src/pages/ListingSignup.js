@@ -4,6 +4,9 @@ import { useAuth0 } from "../react-auth0-spa";
 import { Redirect } from "react-router-dom"
 import { Formik, Form, Field } from "formik";
 import * as Yup from 'yup';
+import { Col, Row, Container } from "../components/Grid";
+import "./style.css";
+
 
 const ListingSchema = Yup.object().shape({
   zip_code: Yup.string().matches(/(^\d{5}$)|(^\d{5}-\d{4}$)/, { message: "That is not a valid zip code" })
@@ -169,6 +172,8 @@ const ListingSignup = props => {
   }
 
   if (!isAuthenticated) {
+    // return <ListingForm />
+
     return <Redirect to="login" />
   }
 
