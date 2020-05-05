@@ -45,7 +45,7 @@ export const ListingForm = (props) => {
   const [redirect, setRedirect] = useState(false)
   const options = ["Dining", "Essentials", "Take-Out", "Delivery", "Retail", "Services"]
   return (
-    <div className="container spacer">
+    <div className="container">
       <h4 style={{ color: "black" }}>Create your business profile</h4>
       <Formik
         initialValues={props.chosen ? props.chosen : {
