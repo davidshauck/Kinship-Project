@@ -1,4 +1,4 @@
-* {
+* body html {
     box-sizing: border-box;
 }
 
@@ -52,10 +52,6 @@ form.search button[type="submit"] {
     height: 40px;
 }
 
-.signup-container {
-    padding: 20px;
-}
-
 .register-submit {
     padding: 5px 20px 5px 20px !important;
     font-size: 13px !important;
@@ -79,4 +75,62 @@ textarea {
 
 .no-results {
     text-align: center;
+}
+
+.signup-container {
+    border: 1px solid #ccc;
+    margin-top: 30px;
+    background-color: #f0f0f0;
+    height: 10%;
+    overflow: scroll;
+    border-radius: 6px;     
+}
+
+.signup-boxes, .image-box, .website-box, .social-boxes {
+    margin: 5px;
+    height: 50px;
+    border: 1px solid #ccc
+}
+
+.image-box, .website-box {
+    width: 48%;
+    display: inline-block !important;
+    padding: 10px;
+}
+
+.social-boxes {
+    width: 32%;
+    display: inline-block !important;
+    padding: 10px;
+}
+
+.hours-boxes {
+    margin: 5px;
+    height: 42px;
+    width: 12%;
+}
+
+.days-container {
+    display: flex;
+    padding: 5px;
+    margin: 0px !important;
+}
+
+.days {
+    width: 12% !important;
+    margin: 3px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.checkbox {
+    margin: .5% 2.5%;
+    font-size: 20px;
+}
+
+.profile-head {
+    font-family:"Mark","Avenir","Helvetica","Arial",sans-serif;
+    margin-top: 20px;
+    font-size: 30px;
+    margin-left: 10px;
 }

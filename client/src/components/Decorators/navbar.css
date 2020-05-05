@@ -25,6 +25,7 @@
     color: grey;
     float: right;
     text-align: right;
+    font-size: 14px;
 }
 
 a:hover, a:link {
