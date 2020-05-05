@@ -23,7 +23,7 @@ export const AccountDashboard = props => {
     console.log("Good to go with listing!")
     const updated_listing = await API.updateListing(listing)
     const new_user_data =  await  API.getListingByUser(user)
-    setProfile({ ...user, ...profile, listings:new_user_data.data.listings, is_editing: !profile.is_editing, chosen: "" })
+    setProfile({ ...user, ...profile, listings:new_user_data.data.listings, is_editing: !profile.is_editing})
   }
 
   const toggleEdit = (id) => {
@@ -34,7 +34,7 @@ export const AccountDashboard = props => {
 
   return (
     <div className="container spacer">
-      <h1>{profile.hasOwnProperty("chosen") ? `Editing ${profile.chosen.name}`: `${user.name}'s Dashboard`}</h1>
+      <h1>{profile.is_editing ? `Editing ${profile.chosen.name}`: `${user.name}'s Dashboard`}</h1>
       {profile.is_editing ? <ListingForm {...profile} button_text="Update" handleFormSubmit={handleUpdate}/> :
         profile.listings ? profile.listings.map((listing, index) => {
           return <FeatureCard {...listing} onClick={() => toggleEdit(listing._id)} key={index} />
