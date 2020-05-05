@@ -20,12 +20,12 @@ export const AccountDashboard = props => {
   const toggleEdit = (id) => {
     const chosen = !profile.is_editing ? profile.listings.filter(listing => listing._id === id)[0] : ""
     console.log(chosen)
-    setProfile({ ...profile, is_editing: !profile.is_editing, chosen: chosen })
+    setProfile({ ...profile, is_editing: !profile.is_editing, chosen: !profile.is_editing ? chosen : "" })
   }
 
   return (
-    <div className="container footer-spacer">
-      <h1>Hey there from the dashboard</h1>
+    <div className="container spacer">
+      <h1>{profile.hasOwnProperty("chosen") ? `Editing ${profile.chosen.name}`: `${user.name}'s Dashboard`}</h1>
       {profile.is_editing ? <ListingForm {...profile} /> :
         profile.listings ? profile.listings.map((listing, index) => {
           return <FeatureCard {...listing} onClick={() => toggleEdit(listing._id)} key={index} />
