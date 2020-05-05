@@ -6,7 +6,34 @@ import { useAuth0 } from "../../react-auth0-spa";
 import SearchForm from "../SearchForm"
 import "./navbar.css";
 
-export const FeatureCard = (props) => (
+export const FeatureCard1 = (props) => (
+  <div className="card">
+    <div className="card-body">
+      <div className="ad">Advertisement</div>
+      <img src={props.image} alt="..." className="img-thumbnail" />
+      <div className="card-text">{props.name}</div>
+      <div className="card-text">{props.address1} {props.city}, {props.us_state}</div>
+      <div className="card-text">{props.phone}</div>
+      <div>{props.telephone}</div>
+      {props.categories ? props.categories.map(cateogry => <span>{cateogry} </span>) : ""}
+    </div>
+  </div>
+)
+
+export const FeatureCard2 = (props) => (
+  <div className="card">
+    <div className="card-body">
+      <img src={props.image} alt="..." className="img-thumbnail" />
+      <h5 className="card-title">{props.name}</h5>
+      <div className="card-text">{props.address1} {props.city}, {props.us_state}</div>
+      <div className="card-text">{props.phone}</div>
+      <div>{props.telephone}</div>
+      {props.categories ? props.categories.map(cateogry => <span>{cateogry} </span>) : ""}
+    </div>
+  </div>
+)
+
+export const FeatureCard3 = (props) => (
   <div className="card">
     <div className="card-body">
       <img src={props.image} alt="..." className="img-thumbnail" />
@@ -26,21 +53,20 @@ export const Links = props => {
       <div className="navbar-buttons">
         <div className="lifeline-text">
           <Link to="/" style={{ textDecoration: 'none' }}>
-            Local Lifeline
+            Local Lifeline | <span className="small-text">Your community resource</span>
           </Link>
         </div>
         <ul className="navbar-nav navbar-center">
+          <Link push to="/">
+            <li className="nav-item">
+              <div className="nav-link">What is Local Lifeline?</div>
+            </li>
+          </Link>
           <Link push to="/new-listing">
             <li className="nav-item">
               <div className="nav-link">Add a listing</div>
             </li>
           </Link>
-          <li className="nav-item">
-            <a className="nav-link" href="mailto:admin@kinshipfarm.org?subject=Inquiry">Contact</a>
-          </li>
-          <li>
-            <a className="nav-link" href="mailto:info@brixyfy.com?subject=Report a bug">Report a bug</a>
-          </li>
           <Link to="/dashboard">
             <li className="nav-item">
               <div className="nav-link">My listings</div>
@@ -59,21 +85,20 @@ export const Links = props => {
       <div className="navbar-buttons">
         <div className="lifeline-text">
           <Link to="/" style={{ textDecoration: 'none' }}>
-            Local Lifeline
+            Local Lifeline | <span className="small-text">Your community resource</span>
           </Link>
         </div>
         <ul className="navbar-nav navbar-center">
+          <Link push to="/">
+            <li className="nav-item">
+              <div className="nav-link">What is Local Lifeline?</div>
+            </li>
+          </Link>
           <Link push to="/new-listing">
             <li className="nav-item">
               <div className="nav-link">Add your listing</div>
             </li>
           </Link>
-          <li className="nav-item">
-            <a className="nav-link" href="mailto:admin@kinshipfarm.org?subject=Inquiry">Contact</a>
-          </li>
-          <li>
-            <a className="nav-link" href="mailto:info@brixyfy.com?subject=Report a bug">Report a bug</a>
-          </li>
           <Link to="/login">
             <li className="nav-item">
               <div className="nav-link" onClick={() => loginWithRedirect({})}>Login</div>

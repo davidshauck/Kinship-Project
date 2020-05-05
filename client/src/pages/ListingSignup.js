@@ -300,7 +300,7 @@ const ListingForm = (props) => {
                       name="website"
                       type="text"
                       className="website-box"
-                      placeholder="Website"
+                      placeholder="http://www.your-website.com"
                     />
                     <Field
                       name="twitter"

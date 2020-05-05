@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useAuth0 } from "../react-auth0-spa";
-import { FeatureCard } from "../components/Decorators";
+import { FeatureCard1 } from "../components/Decorators";
 
 import API from "../utils/API";
 
@@ -20,7 +20,7 @@ export const AccountDashboard = props => {
     <div className="container footer-spacer">
       <h1>Hey there from the dashboard</h1>
       {profile.listings ? profile.listings.map(listing => {
-        return <FeatureCard {...listing} />
+        return <FeatureCard1 {...listing} />
       }) : <h3>No listings yet!</h3>}
     </div>
   );
