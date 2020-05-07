@@ -34,13 +34,6 @@ export const AccountDashboard = props => {
   }
 
   return (
-// <<<<<<< HEAD
-//     <div className="container footer-spacer">
-//       <h1>Hey there from the dashboard</h1>
-//       {profile.listings ? profile.listings.map(listing => {
-//         return <FeatureCard1 {...listing} />
-//       }) : <h3>No listings yet!</h3>}
-// =======
     <div className="container spacer">
       <h1>{profile.is_editing ? `Editing ${profile.chosen.name}`: `${user.name}'s Dashboard`}</h1>
       {profile.is_editing ? <ListingForm {...profile} button_text="Update" handleFormSubmit={handleUpdate}/> :
@@ -48,7 +41,6 @@ export const AccountDashboard = props => {
           return <FeatureCard {...listing} onClick={() => toggleEdit(listing._id)} key={index} />
         }) : <h3>No listings yet!</h3>
       }
-{/* >>>>>>> fc9bff74f4aadd83c68f278b8d6125afff31e04f */}
     </div>
   );
 }

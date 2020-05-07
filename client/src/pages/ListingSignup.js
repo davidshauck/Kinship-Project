@@ -5,6 +5,7 @@ import { Redirect } from "react-router-dom"
 import { Formik, Form, Field } from "formik";
 import * as Yup from 'yup';
 import { Row } from "../components/Grid";
+import Tags from "../components/Tags"
 import "./style.css";
 
 const ListingSchema = Yup.object().shape({
@@ -326,6 +327,8 @@ export const ListingForm = (props) => {
               <h4 style={{ color: "black" }}>Additional details</h4>
               {errors ? <p>{JSON.stringify(errors.zip_code)}</p> : null}
               <textarea className="form-control" rows="10" name="description" onChange={handleChange} placeholder="Message to your customers, store hours, etc." />
+              <Tags />
+              
               <button className="btn btn-secondary save-button">
                 {props.button_text ? props.button_text : "Save"}
               </button>
