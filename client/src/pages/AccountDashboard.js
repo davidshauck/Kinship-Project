@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useAuth0 } from "../react-auth0-spa";
-
 import { FeatureCard } from "../components/Decorators";
 import { ListingForm } from "../pages/ListingSignup";
 import API from "../utils/API";

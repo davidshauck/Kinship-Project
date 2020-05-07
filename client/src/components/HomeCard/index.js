@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import SearchForm from "../../components/SearchForm"
 import API from "../../utils/API";
 import { FeatureCard } from "../Decorators"
-import { Col, Row, Container } from "../Grid";
+import { Row } from "../Grid";
 import "./homecard.css";
 
 const HomeCard = () => {
@@ -10,7 +10,7 @@ const HomeCard = () => {
   const [featured, setFeatured] = useState({});
 
   useEffect(() => {
-    API.getRandom().then(featured1 => {
+    API.getRandom().then(featured => {
       return setFeatured({ featured: featured.data.result })
     })
   }, []);

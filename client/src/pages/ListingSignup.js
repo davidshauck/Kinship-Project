@@ -195,6 +195,7 @@ export const ListingForm = (props) => {
 
               {/* TRIED TO ITERATE OVER DAYS OF WEEK, WORKED WITH THE CONSOLE LOG BUT NOT WITH THE FORM */}
               {/* {times (daysOfWeek.length) (i => 
+
                 // console.log(daysOfWeek[i])
                 <Field as="select" name="hours" className="hours-boxes">
                 {hours.map(hour => (
@@ -331,8 +332,7 @@ export const ListingForm = (props) => {
               
               <button className="btn btn-secondary save-button">
                 {props.button_text ? props.button_text : "Save"}
-              </button>
-              
+              </button>              
             </Form>
           )}
       </Formik>

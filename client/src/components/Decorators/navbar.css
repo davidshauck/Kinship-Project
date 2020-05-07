@@ -43,6 +43,7 @@ a:hover, a:link {
 a {
     text-decoration: none;
     color: grey !important;
+    font-size: 30px;
 }
 
 .lifeline-text {
@@ -50,7 +51,7 @@ a {
     color: grey !important;
     margin-top: -10px;
     height: 200px;
-    font-size: 30px;
+    font-size: 30px !important;
 }
 
 li {
