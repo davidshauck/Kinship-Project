@@ -15,7 +15,6 @@ export const FeatureCard = (props) => (
       <p>{props.telephone}</p>
       {props.categories ? props.categories.map((cateogry, index) => <span key={index}>{cateogry} </span>) : ""}
     </div>
-  </div>
 )
 
 export const FeatureCard3 = (props) => (
