@@ -20,6 +20,7 @@ export const AccountDashboard = props => {
 
 
   const handleUpdate = async (listing) =>{
+    console.log("Good to go with listing!")
     const updated_listing = await API.updateListing(listing)
     const new_user_data =  await  API.getListingByUser(user)
     setProfile({ ...user, ...profile, listings:new_user_data.data.listings, is_editing: !profile.is_editing})
