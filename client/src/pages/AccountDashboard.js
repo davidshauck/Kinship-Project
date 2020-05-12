@@ -27,6 +27,7 @@ export const AccountDashboard = props => {
   }
 
   const toggleEdit = (id) => {
+    console.log("Hello")
     const chosen = !profile.is_editing ? profile.listings.filter(listing => listing._id === id)[0] : ""
     console.log(chosen)
     setProfile({ ...profile, is_editing: !profile.is_editing, chosen: !profile.is_editing ? chosen : "" })
