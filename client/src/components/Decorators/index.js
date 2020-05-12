@@ -6,7 +6,7 @@ import "./navbar.css";
 
 export const FeatureCard = (props) => (
   <div className="card">
-    <div className="card-body">
+    <div className="card-body" onClick={props.onClick}>
       <div className="ad">Advertisement</div>
       <img src={props.image} alt="..." className="img-thumbnail" />
       <div className="card-text">{props.name}</div>
