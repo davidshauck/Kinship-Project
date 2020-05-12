@@ -1,33 +1,17 @@
 import React, { useState, useEffect } from "react";
 import SearchForm from "../../components/SearchForm"
 import API from "../../utils/API";
-import { FeatureCard1, FeatureCard2, FeatureCard3 } from "../Decorators"
-import { Col, Row, Container } from "../Grid";
+import { FeatureCard } from "../Decorators"
+import { Row } from "../Grid";
 import "./homecard.css";
 
 const HomeCard = () => {
 
-  const [featured1, setFeatured1] = useState({});
+  const [featured, setFeatured] = useState({});
 
   useEffect(() => {
-    API.getRandom().then(featured1 => {
-      return setFeatured1({ featured1: featured1.data.result })
-    })
-  }, []);
-
-  const [featured2, setFeatured2] = useState({});
-
-  useEffect(() => {
-    API.getRandom().then(featured2 => {
-      return setFeatured2({ featured2: featured2.data.result })
-    })
-  }, []);
-  
-  const [featured3, setFeatured3] = useState({});
-
-  useEffect(() => {
-    API.getRandom().then(featured3 => {
-      return setFeatured3({ featured3: featured3.data.result })
+    API.getRandom().then(featured => {
+      return setFeatured({ featured: featured.data.result })
     })
   }, []);
 
@@ -41,9 +25,7 @@ const HomeCard = () => {
       </Row>
       <Row>
         <div className="featured-container">
-        <FeatureCard1 {...featured1.featured1} />
-        {/* <FeatureCard2 {...featured2.featured2} />
-        <FeatureCard3 {...featured3.featured3} /> */}
+        <FeatureCard {...featured.featured} />
         </div>
       </Row>
     </div>
