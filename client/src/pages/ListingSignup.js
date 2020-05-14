@@ -354,7 +354,6 @@ const ListingSignup = props => {
   }
 
   if (!isAuthenticated) {
-
     return <Redirect to="login" />
   }
 
