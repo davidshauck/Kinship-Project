@@ -1,60 +1,40 @@
+import React, { useState } from "react";
 
-import React from "react";
-import "./tags.css";
-
-class Tags extends React.Component {
-    constructor() {
-      super();
-      
-      this.state = {
-        tags: [
-        ]
-      };
-    }
+export const Tags = (props) => {
+    const [tags, setTags] = useState({all: props.tags ? props.tags : []});
     
-    removeTag = (i) => {
-      const newTags = [ ...this.state.tags ];
-      newTags.splice(i, 1);
-      this.setState({ tags: newTags });
-    }
-  
-    inputKeyDown = (e) => {
-      const val = e.target.value;
-      if (e.key === 'Enter' && val || e.key === "," && val ) {
-        if (this.state.tags.find(tag => tag.toLowerCase() === val.toLowerCase())) {
-          return;
-        }
-        this.setState({ tags: [...this.state.tags, val]});
-        this.tagInput.value = null;
-        this.tagInput = "";
-      } else if (e.key === 'Backspace' && !val) {
-        this.removeTag(this.state.tags.length - 1);
-      }
-    }
-  
-    render() {
-      const { tags } = this.state;
-  
-      return (
-        <div className="input-tag">
-          <ul className="input-tag__tags">
-            { tags.map((tag, i) => (
-              <li key={tag}>
-                {tag}
-                <button type="button" onClick={() => { this.removeTag(i); }}>+</button>
-              </li>
-            ))}
-            <li className="input-tag__tags__input"><input type="text" placeholder="Add search tags (e.g., Italian, kids, etc.)" onKeyDown={this.inputKeyDown} ref={c => { this.tagInput = c; }} /></li>
-          </ul>
-        </div>
-      );
-    }
-  }
-  
-//   ReactDOM.render(
-//     <InputTag />,
-//     document.getElementById('content')
-//   );
+    const removeTags = indexToRemove => {
+      setTags({all: [...tags.all.filter((_, index) => index !== indexToRemove)]});
+    };
 
-export default Tags;
-  
+    const addTags = event => {
+      console.log("Adding tag")
+      if (event.target.value !== "") {
+        setTags({all: [...tags.all, event.target.value]});
+        props.selectedTags([...tags.all, event.target.value]);
+        event.target.value = "";
+      }
+    };
+    return (
+      <div className="tags-input">
+        <ul id="tags">
+          {tags.all.map((tag, index) => (
+            <li key={index} className="tag">
+              <span className='tag-title'>{tag}</span>
+              <span className='tag-close-icon'
+                onClick={() => removeTags(index)}
+              >
+                x
+              </span>
+            </li>
+          ))}
+        </ul>
+        <input
+          type="text"
+          className="col-12 signup-boxes"
+          onKeyUp={event => event.keyCode == 32 ? addTags(event) : null}
+          placeholder="Press enter to add tags"
+        />
+      </div>
+    );
+  };
