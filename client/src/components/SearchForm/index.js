@@ -5,7 +5,6 @@ import {withRouter} from 'react-router';
 import "./searchForm.css";
 
 function SearchForm() { 
-  
   return (
     <form className="search">
       <div className="form-group input-field">
@@ -73,6 +72,14 @@ function SearchForm() {
       </div>
     </form>
   );
+}
+
+export const SearchText = (props) => { 
+  return <input className={"dropdown"} type="text" value={props.value} onChange={props.onChange}/>
+}
+
+export const SearchResult = (props) => {
+  return <li className="result">{props.name} | {props.city}, {props.us_state}</li>
 }
 
 export default withRouter(SearchForm);
