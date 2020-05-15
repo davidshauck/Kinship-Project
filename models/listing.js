@@ -102,6 +102,9 @@ const listingSchema = new Schema({
   SundayClose: {
     type: String
   },
+  Tags:{
+    type: String
+  }
 });
 
 const Listing = mongoose.model("Listing", listingSchema);
